@@ -95,6 +95,31 @@ function CenterControl(controlDiv, map) {
          strokeColor: '#008000',
          strokeWeight: 2
       });
+            poly17 = new google.maps.Polyline({
+         map: map,
+         path: [],
+         strokeColor: '#008000',
+         strokeWeight: 2
+      });
+                 poly18 = new google.maps.Polyline({
+         map: map,
+         path: [],
+         strokeColor: '#008000',
+         strokeWeight: 2
+      });
+                 poly19 = new google.maps.Polyline({
+         map: map,
+         path: [],
+         strokeColor: '#008000',
+         strokeWeight: 2
+      });
+                 poly20 = new google.maps.Polyline({
+         map: map,
+         path: [],
+         strokeColor: '#008000',
+         strokeWeight: 2
+      });
+      
       
         var centerControlDiv = document.createElement('div');
         var centerControl = new CenterControl(centerControlDiv, map);
@@ -111,6 +136,10 @@ var T13 = json.feeds[0].last_value.split(',');
 var T14 = json.feeds[1].last_value.split(',');
 var T15 = json.feeds[2].last_value.split(',');  
 var T16 = json.feeds[3].last_value.split(',');  
+var T17 = json.feeds[4].last_value.split(',');  
+var T18 = json.feeds[5].last_value.split(',');
+var T19 = json.feeds[6].last_value.split(',');  
+var T20 = json.feeds[7].last_value.split(',');  
 
 var lat13 = T13[0];
 var lon13 = T13[1];
@@ -132,17 +161,45 @@ var lon16 = T16[1];
 var speed16 = T16[2];
 var batPercent16 = T16[3];
 
+var lat17 = T17[0];
+var lon17 = T17[1];
+var speed17 = T17[2];
+var batPercent17 = T17[3];
+
+var lat18 = T18[0];
+var lon18 = T18[1];
+var speed18 = T18[2];
+var batPercent18 = T18[3];
+
+var lat19 = T19[0];
+var lon19 = T19[1];
+var speed19 = T19[2];
+var batPercent19 = T19[3];
+
+var lat20 = T20[0];
+var lon20 = T20[1];
+var speed20 = T20[2];
+var batPercent20 = T20[3];
+
 // console.log( "JSON Data: " + batPercent13  );
 
 var infowindow13 = new google.maps.InfoWindow({content:  "Tracker 13.</p>" + "Bat: " + batPercent13 + "%"});
 var infowindow14 = new google.maps.InfoWindow({content:  "Tracker 14.</p>" + "Bat: " + batPercent14 + "%"});
 var infowindow15 = new google.maps.InfoWindow({content:  "Tracker 15.</p>" +  "Bat: " + batPercent15 + "%"});
 var infowindow16 = new google.maps.InfoWindow({content:  "Tracker 16.</p>" +  "Bat: " + batPercent16 + "%"}); 
+var infowindow17 = new google.maps.InfoWindow({content:  "Tracker 17.</p>" + "Bat: " + batPercent17 + "%"});
+var infowindow18 = new google.maps.InfoWindow({content:  "Tracker 18.</p>" + "Bat: " + batPercent18 + "%"});
+var infowindow19 = new google.maps.InfoWindow({content:  "Tracker 19.</p>" +  "Bat: " + batPercent19 + "%"});
+var infowindow20 = new google.maps.InfoWindow({content:  "Tracker 20.</p>" +  "Bat: " + batPercent20 + "%"}); 
  
 var myLL13 = new google.maps.LatLng(lat13, lon13);
 var myLL14 = new google.maps.LatLng(lat14, lon14);
 var myLL15 = new google.maps.LatLng(lat15, lon15);
 var myLL16 = new google.maps.LatLng(lat16, lon16);
+var myLL17 = new google.maps.LatLng(lat17, lon17);
+var myLL18 = new google.maps.LatLng(lat18, lon18);
+var myLL19 = new google.maps.LatLng(lat19, lon19);
+var myLL20 = new google.maps.LatLng(lat20, lon20);
 
 window.mapcenter = myLL14; 
 clearMarkers();
@@ -193,7 +250,45 @@ marker16.addListener('click', function() {
         infowindow16.open(map, this);
         });
   
+ var marker17 = new google.maps.Marker({
+            icon: 'https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png',
+            position: myLL17,
+            map: map,
+        });
+markers.push(marker17);     
+marker17.addListener('click', function() {
+        infowindow17.open(map, this);
+        });
+ 
+  var marker18 = new google.maps.Marker({
+            icon: 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+            position: myLL18,
+            map: map,
+        });
+markers.push(marker18);     
+marker18.addListener('click', function() {
+        infowindow18.open(map, this);
+        });  
+ 
+   var marker19 = new google.maps.Marker({
+            icon: 'https://maps.google.com/mapfiles/ms/icons/pink-dot.png',
+            position: myLL19,
+            map: map,
+        });
+markers.push(marker19);     
+marker19.addListener('click', function() {
+        infowindow19.open(map, this);
+        });         
 
+   var marker20 = new google.maps.Marker({
+            icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dott.png',
+            position: myLL20,
+            map: map,
+        });
+markers.push(marker20);     
+marker20.addListener('click', function() {
+        infowindow20.open(map, this);
+        });         
     
 var path = poly.getPath();
 path.push(new google.maps.LatLng(lat13, lon13));
