@@ -163,7 +163,7 @@ var batPercent20 = T20[3];
 
 // console.log( "JSON Data: " + batPercent13  );
 
-var infowindow13 = new google.maps.InfoWindow({content:  "Tracker 13.</p>" + "Bat: " + batPercent13 + "% </n>" + "Speed: " + speed13 + "km/h"});
+var infowindow13 = new google.maps.InfoWindow({content:  "Tracker 13.</p>" + "Bat: " + batPercent13 + "% </br>" + "Speed: " + speed13 + "km/h"});
 var infowindow14 = new google.maps.InfoWindow({content:  "Tracker 14.</p>" + "Bat: " + batPercent14 + "%"});
 var infowindow15 = new google.maps.InfoWindow({content:  "Tracker 15.</p>" +  "Bat: " + batPercent15 + "%"});
 var infowindow16 = new google.maps.InfoWindow({content:  "Tracker 16.</p>" +  "Bat: " + batPercent16 + "%"}); 
