@@ -319,7 +319,7 @@ setTimeout(arguments.callee, 10000);
 (function() {
  var T1URL = "https://io.adafruit.com/api/groups/JWDamsteeg/receive.json?x-aio-key=1aae3c9c6cff44fda53335a156f30f04";
  $.getJSON(T1URL, function(json) {
-var T = json.feeds[3].last_value.split(',');
+var T = json.feeds[0].last_value.split(',');
 var lat1 = T[0];
 var lon1 = T[1];
 console.log(lat1);
