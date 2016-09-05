@@ -36,17 +36,11 @@ function CenterControl(controlDiv, map) {
 
       }
  
+
     
       function initMap() {
         // var myLatLng = {lat: window.lattitude, lng: window.lattitude}; // Number(window.lattitude)
         //var myLatLng = new google.maps.LatLng(51.99704,4.35392);
-        (function() {
- var T1URL = "https://io.adafruit.com/api/groups/JWDamsteeg/receive.json?x-aio-key=1aae3c9c6cff44fda53335a156f30f04";
- $.getJSON(T1URL, function(json) {
-var T = json.feeds[0].last_value.split(',');
-var lat1 = T[0];
-var lon1 = T[1];
- })});
  
 map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: lat1, lng: lon1},
@@ -320,3 +314,13 @@ setTimeout(arguments.callee, 10000);
           markers[i].setMap(map);
         }
       }
+
+
+(function() {
+ var T1URL = "https://io.adafruit.com/api/groups/JWDamsteeg/receive.json?x-aio-key=1aae3c9c6cff44fda53335a156f30f04";
+ $.getJSON(T1URL, function(json) {
+var T = json.feeds[0].last_value.split(',');
+var lat1 = T[0];
+var lon1 = T[1];
+map.setCenter(new google.maps.LatLng(lat1, lon1););
+ })});
