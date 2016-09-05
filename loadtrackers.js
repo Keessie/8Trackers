@@ -43,7 +43,7 @@ function CenterControl(controlDiv, map) {
         //var myLatLng = new google.maps.LatLng(51.99704,4.35392);
  
 map = new google.maps.Map(document.getElementById('map'), {
-         // center: {lat: lat1, lng: lon1},
+         center: {lat: 51.998276, lng: 4.353702}, 
           zoom: 16
         });
       
