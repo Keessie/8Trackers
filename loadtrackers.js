@@ -26,7 +26,7 @@ function CenterControl(controlDiv, map) {
         controlText.style.lineHeight = '38px';
         controlText.style.paddingLeft = '5px';
         controlText.style.paddingRight = '5px';
-        controlText.innerHTML = 'Center Map on T14';
+        controlText.innerHTML = 'Center T14';
         controlUI.appendChild(controlText);
 
         // Setup the click event listeners: simply set the map to Chicago.
@@ -35,7 +35,6 @@ function CenterControl(controlDiv, map) {
         });
 
       }
- 
 
     
       function initMap() {
@@ -163,14 +162,14 @@ var batPercent20 = T20[3];
 
 // console.log( "JSON Data: " + batPercent13  );
 
-var infowindow13 = new google.maps.InfoWindow({content:  "Tracker 13.</p>" + "Bat: " + batPercent13 + "% </br>" + "Speed: " + speed13 + "km/h"});
-var infowindow14 = new google.maps.InfoWindow({content:  "Tracker 14.</p>" + "Bat: " + batPercent14 + "%"});
-var infowindow15 = new google.maps.InfoWindow({content:  "Tracker 15.</p>" +  "Bat: " + batPercent15 + "%"});
-var infowindow16 = new google.maps.InfoWindow({content:  "Tracker 16.</p>" +  "Bat: " + batPercent16 + "%"}); 
-var infowindow17 = new google.maps.InfoWindow({content:  "Tracker 17.</p>" + "Bat: " + batPercent17 + "%"});
-var infowindow18 = new google.maps.InfoWindow({content:  "Tracker 18.</p>" + "Bat: " + batPercent18 + "%"});
-var infowindow19 = new google.maps.InfoWindow({content:  "Tracker 19.</p>" +  "Bat: " + batPercent19 + "%"});
-var infowindow20 = new google.maps.InfoWindow({content:  "Tracker 20.</p>" +  "Bat: " + batPercent20 + "%"}); 
+var infowindow13 = new google.maps.InfoWindow({content:  "Tracker 13.</p>" + "Bat: " + batPercent13 + "% </br>" + "Speed: " + speed13 + " km/h"});
+var infowindow14 = new google.maps.InfoWindow({content:  "Tracker 14.</p>" + "Bat: " + batPercent14 + "% </br>" + "Speed: " + speed14 + " km/h"});
+var infowindow15 = new google.maps.InfoWindow({content:  "Tracker 15.</p>" +  "Bat: " + batPercent15 + "% </br>" + "Speed: " + speed15 + " km/h"});
+var infowindow16 = new google.maps.InfoWindow({content:  "Tracker 16.</p>" +  "Bat: " + batPercent16 + "% </br>" + "Speed: " + speed16 + " km/h"});
+var infowindow17 = new google.maps.InfoWindow({content:  "Tracker 17.</p>" + "Bat: " + batPercent17 + "% </br>" + "Speed: " + speed17 + " km/h"});
+var infowindow18 = new google.maps.InfoWindow({content:  "Tracker 18.</p>" + "Bat: " + batPercent18 + "% </br>" + "Speed: " + speed18 + " km/h"});
+var infowindow19 = new google.maps.InfoWindow({content:  "Tracker 19.</p>" +  "Bat: " + batPercent19 + "% </br>" + "Speed: " + speed19 + " km/h"});
+var infowindow20 = new google.maps.InfoWindow({content:  "Tracker 20.</p>" +  "Bat: " + batPercent20 + "% </br>" + "Speed: " + speed20 + " km/h"});
  
 var myLL13 = new google.maps.LatLng(lat13, lon13);
 var myLL14 = new google.maps.LatLng(lat14, lon14);
