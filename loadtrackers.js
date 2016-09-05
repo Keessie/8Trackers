@@ -322,5 +322,6 @@ setTimeout(arguments.callee, 10000);
 var T = json.feeds[3].last_value.split(',');
 var lat1 = T[0];
 var lon1 = T[1];
+console.log(lat1);
 map.setCenter(new google.maps.LatLng(lat1, lon1));
  })});
