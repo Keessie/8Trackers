@@ -46,6 +46,8 @@ function CenterControl(controlDiv, map) {
 var T = json.feeds[0].last_value.split(',');
 var lat1 = T[0];
 var lon1 = T[1];
+ })});
+ 
 map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: lat1, lng: lon1},
           zoom: 16
@@ -107,7 +109,7 @@ map = new google.maps.Map(document.getElementById('map'), {
 
         centerControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
- })});
+
  
         
 
