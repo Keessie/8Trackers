@@ -209,7 +209,7 @@ marker14.addListener('click', function() {
         
 
  var marker15 = new google.maps.Marker({
-            icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=15|6991FD|000000',
             position: myLL15,
             map: map,
         });
@@ -220,7 +220,7 @@ marker15.addListener('click', function() {
 
         
  var marker16 = new google.maps.Marker({
-            icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=16|00E64D|000000',
             position: myLL16,
             map: map,
         });
@@ -230,7 +230,7 @@ marker16.addListener('click', function() {
         });
   
  var marker17 = new google.maps.Marker({
-            icon: 'https://maps.google.com/mapfiles/ms/icons/ltblue-dot.png',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=17|65DBDB|000000',
             position: myLL17,
             map: map,
         });
@@ -240,7 +240,7 @@ marker17.addListener('click', function() {
         });
  
   var marker18 = new google.maps.Marker({
-            icon: 'https://maps.google.com/mapfiles/ms/icons/orange-dot.png',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=18|FF9900|000000',
             position: myLL18,
             map: map,
         });
@@ -250,7 +250,7 @@ marker18.addListener('click', function() {
         });  
  
    var marker19 = new google.maps.Marker({
-            icon: 'https://maps.google.com/mapfiles/ms/icons/pink-dot.png',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=19|E661AC|000000',
             position: myLL19,
             map: map,
         });
@@ -260,7 +260,7 @@ marker19.addListener('click', function() {
         });         
 
    var marker20 = new google.maps.Marker({
-            icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=20|FDF569|000000',
             position: myLL20,
             map: map,
         });
