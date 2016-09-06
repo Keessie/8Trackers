@@ -64,6 +64,11 @@ function CenterControl(controlDiv, map) {
         // Setup the click event listeners: simply set the map to Chicago.
         controlUI.addEventListener('click', function() {
            poly.setMap(null);
+             poly.setMap(null);
+               poly.setMap(null);
+                 poly.setMap(null);
+                   poly.setMap(null);
+                     poly.setMap(null);
         });
 
       }
