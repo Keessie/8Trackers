@@ -184,7 +184,7 @@ window.mapcenter = myLL14;
 clearMarkers();
 
 var marker13 = new google.maps.Marker({
-            icon: 'https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=13|8E67FD|000000',
+            icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=13|8E67FD|000000',
             position: myLL13,
             map: map,
               });
@@ -197,7 +197,7 @@ var marker13 = new google.maps.Marker({
  
  
  var marker14 = new google.maps.Marker({
-            icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=14|FD7567|000000',
             position: myLL14,
             map: map,
         });
