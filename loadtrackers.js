@@ -39,7 +39,7 @@ function CenterControl(controlDiv, map) {
 function CenterControl2(controlDiv2, map) {
    
         // Set CSS for the control border.
-        var controlUI2 = document.createElement('div2');
+        var controlUI2 = document.createElement('div');
         controlUI2.style.backgroundColor = '#fff';
         controlUI2.style.border = '2px solid #fff';
         controlUI2.style.borderRadius = '3px';
@@ -51,7 +51,7 @@ function CenterControl2(controlDiv2, map) {
         controlDiv2.appendChild(controlUI2);
 
         // Set CSS for the control interior.
-        var controlText2 = document.createElement('div2');
+        var controlText2 = document.createElement('div');
         controlText2.style.color = 'rgb(25,25,25)';
         controlText2.style.fontFamily = 'Roboto,Arial,sans-serif';
         controlText2.style.fontSize = '16px';
@@ -138,13 +138,13 @@ map = new google.maps.Map(document.getElementById('map'), {
         var centerControlDiv = document.createElement('div');
         var centerControl = new CenterControl(centerControlDiv, map);
 
-        var centerControlDiv2 = document.createElement('div2');
+        var centerControlDiv2 = document.createElement('div');
         var centerControl2 = new CenterControl2(centerControlDiv2, map);
         
         centerControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
-        centerControlDiv2.index = 1;
+        centerControlDiv2.index = 2;
         map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2); 
         
 
