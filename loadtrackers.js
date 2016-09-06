@@ -65,6 +65,8 @@ function CenterControl2(controlDiv2, map) {
         controlUI2.addEventListener('click', function() {
            poly.setMap(null);
            poly14.setMap(null);
+           //var path14 = poly14.getPath();
+           path14.clear();
            poly15.setMap(null);
            poly16.setMap(null);
            poly17.setMap(null);
