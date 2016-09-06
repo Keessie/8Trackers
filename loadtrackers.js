@@ -39,30 +39,30 @@ function CenterControl(controlDiv, map) {
 function CenterControl2(controlDiv2, map) {
 
         // Set CSS for the control border.
-        var controlUI = document.createElement('div2');
-        controlUI.style.backgroundColor = '#fff';
-        controlUI.style.border = '2px solid #fff';
-        controlUI.style.borderRadius = '3px';
-        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-        controlUI.style.cursor = 'pointer';
-        controlUI.style.marginBottom = '22px';
-        controlUI.style.textAlign = 'center';
-        controlUI.title = 'Click to recenter the map';
-        controlDiv.appendChild(controlUI);
+        var controlUI2 = document.createElement('div2');
+        controlUI2.style.backgroundColor = '#fff';
+        controlUI2.style.border = '2px solid #fff';
+        controlUI2.style.borderRadius = '3px';
+        controlUI2.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUI2.style.cursor = 'pointer';
+        controlUI2.style.marginBottom = '22px';
+        controlUI2.style.textAlign = 'center';
+        controlUI2.title = 'Click to recenter the map';
+        controlDiv2.appendChild(controlUI2);
 
         // Set CSS for the control interior.
-        var controlText = document.createElement('div2');
-        controlText.style.color = 'rgb(25,25,25)';
-        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-        controlText.style.fontSize = '16px';
-        controlText.style.lineHeight = '38px';
-        controlText.style.paddingLeft = '30px';
-        controlText.style.paddingRight = '30px';
-        controlText.innerHTML = 'Clear paths';
-        controlUI.appendChild(controlText);
+        var controlText2 = document.createElement('div2');
+        controlText2.style.color = 'rgb(25,25,25)';
+        controlText2.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText2.style.fontSize = '16px';
+        controlText2.style.lineHeight = '38px';
+        controlText2.style.paddingLeft = '30px';
+        controlText2.style.paddingRight = '30px';
+        controlText2.innerHTML = 'Clear paths';
+        controlUI2.appendChild(controlText2);
 
         // Setup the click event listeners: simply set the map to Chicago.
-        controlUI.addEventListener('click', function() {
+        controlUI2.addEventListener('click', function() {
            poly.setMap(null);
            poly14.setMap(null);
            poly15.setMap(null);
