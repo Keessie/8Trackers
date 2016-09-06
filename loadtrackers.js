@@ -68,7 +68,7 @@ function CenterControl2(controlDiv2, map) {
            poly14.setMap(null);
          
            
-           poly14.push(path14);
+         
            poly15.setMap(null);
            poly16.setMap(null);
            poly17.setMap(null);
