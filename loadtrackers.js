@@ -15,7 +15,7 @@ function CenterControl(controlDiv, map) {
         controlUI.style.cursor = 'pointer';
         controlUI.style.marginBottom = '22px';
         controlUI.style.textAlign = 'center';
-        controlUI.title = 'Click to recenter the map';
+        controlUI.title = 'recenter the map';
         controlDiv.appendChild(controlUI);
 
         // Set CSS for the control interior.
@@ -45,9 +45,9 @@ function CenterControl2(controlDiv2, map) {
         controlUI2.style.borderRadius = '3px';
         controlUI2.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
         controlUI2.style.cursor = 'pointer';
-        controlUI2.style.marginBottom = '22px';
-        controlUI2.style.textAlign = 'center';
-        controlUI2.title = 'Click to recenter the map';
+        controlUI2.style.marginBottom = '30px';
+        controlUI2.style.textAlign = 'clear path';
+        controlUI2.title = 'Clear paths';
         controlDiv2.appendChild(controlUI2);
 
         // Set CSS for the control interior.
