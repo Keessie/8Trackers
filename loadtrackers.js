@@ -45,9 +45,9 @@ function CenterControl2(controlDiv2, map) {
         controlUI2.style.borderRadius = '3px';
         controlUI2.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
         controlUI2.style.cursor = 'pointer';
-        controlUI2.style.marginBottom = '22px';
+        controlUI2.style.marginBottom = '0px';
         controlUI2.style.textAlign = 'center';
-        controlUI2.title = 'recenter the map';
+        controlUI2.title = 'Clear paths';
         controlDiv2.appendChild(controlUI2);
 
         // Set CSS for the control interior.
@@ -58,7 +58,7 @@ function CenterControl2(controlDiv2, map) {
         controlText2.style.lineHeight = '38px';
         controlText2.style.paddingLeft = '5px';
         controlText2.style.paddingRight = '5px';
-        controlText2.innerHTML = 'Center T14';
+        controlText2.innerHTML = 'Clear path';
         controlUI2.appendChild(controlText2);
 
         // Setup the click event listeners: simply set the map to Chicago.
@@ -144,7 +144,7 @@ map = new google.maps.Map(document.getElementById('map'), {
         centerControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
-        centerControlDiv2.index = 2;
+        centerControlDiv2.index = 1;
         map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2); 
         
 
