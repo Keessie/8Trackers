@@ -36,7 +36,7 @@ function CenterControl(controlDiv, map) {
 
       }
 
-function CenterControl(controlDiv, map) {
+function CenterControl2(controlDiv2, map) {
 
         // Set CSS for the control border.
         var controlUI = document.createElement('div2');
