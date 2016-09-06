@@ -56,19 +56,21 @@ function CenterControl(controlDiv, map) {
         controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
         controlText.style.fontSize = '16px';
         controlText.style.lineHeight = '38px';
-        controlText.style.paddingLeft = '5px';
-        controlText.style.paddingRight = '5px';
+        controlText.style.paddingLeft = '30px';
+        controlText.style.paddingRight = '30px';
         controlText.innerHTML = 'Clear paths';
         controlUI.appendChild(controlText);
 
         // Setup the click event listeners: simply set the map to Chicago.
         controlUI.addEventListener('click', function() {
            poly.setMap(null);
-             poly.setMap(null);
-               poly.setMap(null);
-                 poly.setMap(null);
-                   poly.setMap(null);
-                     poly.setMap(null);
+           poly14.setMap(null);
+           poly15.setMap(null);
+           poly16.setMap(null);
+           poly17.setMap(null);
+           poly18.setMap(null);       
+           poly19.setMap(null);
+           poly20.setMap(null);
         });
 
       }
