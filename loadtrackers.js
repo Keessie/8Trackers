@@ -56,8 +56,8 @@ function CenterControl2(controlDiv2, map) {
         controlText2.style.fontFamily = 'Roboto,Arial,sans-serif';
         controlText2.style.fontSize = '16px';
         controlText2.style.lineHeight = '38px';
-        controlText2.style.paddingLeft = '30px';
-        controlText2.style.paddingRight = '30px';
+        controlText2.style.paddingLeft = '5px';
+        controlText2.style.paddingRight = '5px';
         controlText2.innerHTML = 'Clear paths';
         controlUI2.appendChild(controlText2);
 
