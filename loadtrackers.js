@@ -42,10 +42,10 @@ function CenterControl2(controlDiv2, map) {
         var controlUI2 = document.createElement('div2');
         controlUI2.style.backgroundColor = '#fff';
         controlUI2.style.border = '2px solid #fff';
-        controlUI2.style.borderRadius = '6px';
+        controlUI2.style.borderRadius = '3px';
         controlUI2.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
         controlUI2.style.cursor = 'pointer';
-        controlUI2.style.marginBottom = '60px';
+        controlUI2.style.marginBottom = '5px';
         controlUI2.style.textAlign = 'clear path';
         controlUI2.title = 'Clear paths';
         controlDiv2.appendChild(controlUI2);
@@ -58,7 +58,7 @@ function CenterControl2(controlDiv2, map) {
         controlText2.style.lineHeight = '70px';
         controlText2.style.paddingLeft = '5px';
         controlText2.style.paddingRight = '5px';
-        controlText2.innerHTML = 'Clear paths';
+        controlText2.innerHTML = 'Clear paths of markers ';
         controlUI2.appendChild(controlText2);
 
         // Setup the click event listeners: simply set the map to Chicago.
