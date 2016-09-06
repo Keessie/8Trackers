@@ -37,7 +37,7 @@ function CenterControl(controlDiv, map) {
       }
 
 function CenterControl2(controlDiv2, map) {
-
+   
         // Set CSS for the control border.
         var controlUI2 = document.createElement('div2');
         controlUI2.style.backgroundColor = '#fff';
@@ -45,8 +45,8 @@ function CenterControl2(controlDiv2, map) {
         controlUI2.style.borderRadius = '3px';
         controlUI2.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
         controlUI2.style.cursor = 'pointer';
-        controlUI2.style.marginBottom = '5px';
-        controlUI2.style.textAlign = 'clear path';
+        controlUI2.style.marginBottom = '22px';
+        controlUI2.style.textAlign = 'center';
         controlUI2.title = 'Clear paths';
         controlDiv2.appendChild(controlUI2);
 
@@ -55,7 +55,7 @@ function CenterControl2(controlDiv2, map) {
         controlText2.style.color = 'rgb(25,25,25)';
         controlText2.style.fontFamily = 'Roboto,Arial,sans-serif';
         controlText2.style.fontSize = '16px';
-        controlText2.style.lineHeight = '70px';
+        controlText2.style.lineHeight = '38px';
         controlText2.style.paddingLeft = '5px';
         controlText2.style.paddingRight = '5px';
         controlText2.innerHTML = 'Clear paths of markers ';
