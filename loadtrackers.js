@@ -138,10 +138,14 @@ map = new google.maps.Map(document.getElementById('map'), {
         var centerControlDiv = document.createElement('div');
         var centerControl = new CenterControl(centerControlDiv, map);
 
+        var centerControlDiv2 = document.createElement('div2');
+        var centerControl2 = new CenterControl2(centerControlDiv2, map);
+        
         centerControlDiv.index = 1;
         map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
- 
+        centerControlDiv2.index = 1;
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2); 
         
 
       };    
