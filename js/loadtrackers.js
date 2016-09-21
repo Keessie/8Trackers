@@ -123,7 +123,7 @@ function extractTrackerDataFromJSON(tracker, json) {
     var batPercent = data[3];
 
     // Info Window
-    var infoWindowText = printTrackerContent(tracker.dataIndex, batPercent, speed);
+    var infoWindowText = printTrackerContent(tracker.mapIndex, batPercent, speed);
     var infoWindow = new google.maps.InfoWindow({ content: infoWindowText });
 
     // Map Marker
