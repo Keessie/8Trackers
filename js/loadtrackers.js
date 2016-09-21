@@ -164,14 +164,17 @@ function extractTrackerDataFromJSON(tracker, json) {
 
 function renderMarkers() {
     $.getJSON(TRACKERS_GET_URL).then(function(json) {
-        console.log(json);
+        console.log(MARKERS);
         MAP_CENTER = TRACKERS[1].googleLL;
         clearMarkers();
+        console.log(MARKERS);
 
         TRACKERS = TRACKERS.map(function(TRACKER) {
             var tracker = extractTrackerDataFromJSON(TRACKER, json);
             return tracker;
         });
+        console.log(MARKERS);
+        console.log(Array(100).join('='));
 
     });
 }
