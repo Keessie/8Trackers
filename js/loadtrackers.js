@@ -79,48 +79,63 @@ function initMap() {
         zoom: 16
     });
 
-    window.setTimeout(function() {
-
-        TRACKERS = TRACKERS.map(function(TRACKER) {
-            var poly = new google.maps.Polyline({
-                map: MAP,
-                path: [],
-                strokeColor: '#' + TRACKER.colorHex,
-                strokeWeight: 2
-            });
-
-            return Object.assign(TRACKER, {
-                poly: poly
-            });
+    TRACKERS = TRACKERS.map(function(TRACKER) {
+        var poly = new google.maps.Polyline({
+            map: MAP,
+            path: [],
+            strokeColor: '#' + TRACKER.colorHex,
+            strokeWeight: 2
         });
 
-        var centerControlDiv = document.createElement('div');
-        addCenterControl(centerControlDiv, MAP);
+        return Object.assign(TRACKER, {
+            poly: poly
+        });
+    });
 
-        var centerControlDiv2 = document.createElement('div');
-        addCenterControl2(centerControlDiv2, MAP);
+    var centerControlDiv = document.createElement('div');
+    addCenterControl(centerControlDiv, MAP);
 
-        centerControlDiv.index = 1;
-        MAP.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+    var centerControlDiv2 = document.createElement('div');
+    addCenterControl2(centerControlDiv2, MAP);
 
-        centerControlDiv2.index = 2;
-        MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
+    centerControlDiv.index = 1;
+    MAP.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
-        renderMarkers();
-        renderMarkers();
-        window.setInterval(renderMarkers, 5000);
+    centerControlDiv2.index = 2;
+    MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
 
-    }, 100);
+    renderMarkers();
+    renderMarkers();
+    window.setInterval(renderMarkers, 5000);
 
 }
 
-function printTrackerContent(number, batPercent, speed) {
-    return [
+function createInfoWindow(number, batPercent, speed) {
+    var infoWindowText = [
         'Tracker ', number, '.</p>',
         'Bat: ', batPercent, '%',
         '</br>',
         'Speed: ', speed, ' km/h'
     ].join('');
+
+    var infoWindow = new google.maps.InfoWindow({ content: infoWindowText });
+    return infoWindow;
+}
+
+function createGoogleLL(lat, lon) {
+    var googleLL = new google.maps.LatLng(lat, lon);
+    return googleLL;
+}
+
+function createMarker(mapIndex, colorHex, googleLL) {
+    var markerIcon = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + mapIndex + '|' + colorHex + '|000000';
+    var marker = new google.maps.Marker({
+        icon: markerIcon,
+        position: googleLL,
+        map: MAP,
+    });
+
+    return marker;
 }
 
 function extractTrackerFromJSON(tracker, json) {
@@ -131,20 +146,10 @@ function extractTrackerFromJSON(tracker, json) {
     var speed = data[2];
     var batPercent = data[3];
 
-    console.log(data);
-
-    // Info Window
-    var infoWindowText = printTrackerContent(tracker.mapIndex, batPercent, speed);
-    var infoWindow = new google.maps.InfoWindow({ content: infoWindowText });
-
-    // Map Marker
-    var googleLL = new google.maps.LatLng(tracker.lat, tracker.lon);
-    var markerIcon = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + tracker.mapIndex + '|' + tracker.colorHex + '|000000';
-    var marker = new google.maps.Marker({
-        icon: markerIcon,
-        position: googleLL,
-        map: MAP,
-    });
+    // Processing
+    var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed);
+    var googleLL = createGoogleLL(tracker.lat, tracker.lon);
+    var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLL);
 
     marker.addListener('click', function() {
         infoWindow.open(MAP, this);
@@ -165,8 +170,6 @@ function extractTrackerFromJSON(tracker, json) {
         marker: marker
     });
 
-    console.log(newTracker);
-
     return newTracker;
 }
 
@@ -181,7 +184,6 @@ function renderMarkers() {
         });
 
         console.log(Array(100).join('='));
-
     });
 }
 
