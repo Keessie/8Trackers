@@ -1,3 +1,9 @@
+/*
+    global
+        MAP, POLY, POLY14, POLY15, POLY16, POLY17, POLY18, POLY19, POLY20, MAP_CENTER, MARKERS, TRACKERS_GET_URL,
+        google, $
+*/
+
 function CenterControl(controlDiv, map) {
 
     // Set CSS for the control border.
@@ -25,13 +31,12 @@ function CenterControl(controlDiv, map) {
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI.addEventListener('click', function() {
-        map.setCenter(window.MAP_CENTER);
+        map.setCenter(MAP_CENTER);
     });
 
 }
 
-function CenterControl2(controlDiv2, map) {
-
+function CenterControl2(controlDiv2) {
     // Set CSS for the control border.
     var controlUI2 = document.createElement('div');
     controlUI2.style.backgroundColor = '#fff';
@@ -83,13 +88,9 @@ function CenterControl2(controlDiv2, map) {
         path20.clear();
 
     });
-
 }
 
 function initMap() {
-    // var myLatLng = {lat: window.lattitude, lng: window.lattitude}; // Number(window.lattitude)
-    //var myLatLng = new google.maps.LatLng(51.99704,4.35392);
-
     MAP = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: 51.998276,
@@ -160,11 +161,10 @@ function initMap() {
 
     centerControlDiv2.index = 2;
     MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
-};
+}
 
 (function() {
-    var T1URL = "https://io.adafruit.com/api/groups/JWDamsteeg/receive.json?x-aio-key=1aae3c9c6cff44fda53335a156f30f04";
-    $.getJSON(T1URL, function(json) {
+    $.getJSON(TRACKERS_GET_URL, function(json) {
         var T13 = json.feeds[0].last_value.split(',');
         var T14 = json.feeds[1].last_value.split(',');
         var T15 = json.feeds[2].last_value.split(',');
@@ -214,31 +214,29 @@ function initMap() {
         var speed20 = T20[2];
         var batPercent20 = T20[3];
 
-        // console.log( "JSON Data: " + batPercent13  );
-
         var infowindow13 = new google.maps.InfoWindow({
-            content: "Tracker 13.</p>" + "Bat: " + batPercent13 + "% </br>" + "Speed: " + speed13 + " km/h"
+            content: 'Tracker 13.</p>' + 'Bat: ' + batPercent13 + '% </br>' + 'Speed: ' + speed13 + ' km/h'
         });
         var infowindow14 = new google.maps.InfoWindow({
-            content: "Tracker 14.</p>" + "Bat: " + batPercent14 + "% </br>" + "Speed: " + speed14 + " km/h"
+            content: 'Tracker 14.</p>' + 'Bat: ' + batPercent14 + '% </br>' + 'Speed: ' + speed14 + ' km/h'
         });
         var infowindow15 = new google.maps.InfoWindow({
-            content: "Tracker 15.</p>" + "Bat: " + batPercent15 + "% </br>" + "Speed: " + speed15 + " km/h"
+            content: 'Tracker 15.</p>' + 'Bat: ' + batPercent15 + '% </br>' + 'Speed: ' + speed15 + ' km/h'
         });
         var infowindow16 = new google.maps.InfoWindow({
-            content: "Tracker 16.</p>" + "Bat: " + batPercent16 + "% </br>" + "Speed: " + speed16 + " km/h"
+            content: 'Tracker 16.</p>' + 'Bat: ' + batPercent16 + '% </br>' + 'Speed: ' + speed16 + ' km/h'
         });
         var infowindow17 = new google.maps.InfoWindow({
-            content: "Tracker 17.</p>" + "Bat: " + batPercent17 + "% </br>" + "Speed: " + speed17 + " km/h"
+            content: 'Tracker 17.</p>' + 'Bat: ' + batPercent17 + '% </br>' + 'Speed: ' + speed17 + ' km/h'
         });
         var infowindow18 = new google.maps.InfoWindow({
-            content: "Tracker 18.</p>" + "Bat: " + batPercent18 + "% </br>" + "Speed: " + speed18 + " km/h"
+            content: 'Tracker 18.</p>' + 'Bat: ' + batPercent18 + '% </br>' + 'Speed: ' + speed18 + ' km/h'
         });
         var infowindow19 = new google.maps.InfoWindow({
-            content: "Tracker 19.</p>" + "Bat: " + batPercent19 + "% </br>" + "Speed: " + speed19 + " km/h"
+            content: 'Tracker 19.</p>' + 'Bat: ' + batPercent19 + '% </br>' + 'Speed: ' + speed19 + ' km/h'
         });
         var infowindow20 = new google.maps.InfoWindow({
-            content: "Tracker 20.</p>" + "Bat: " + batPercent20 + "% </br>" + "Speed: " + speed20 + " km/h"
+            content: 'Tracker 20.</p>' + 'Bat: ' + batPercent20 + '% </br>' + 'Speed: ' + speed20 + ' km/h'
         });
 
         var myLL13 = new google.maps.LatLng(lat13, lon13);
@@ -250,7 +248,7 @@ function initMap() {
         var myLL19 = new google.maps.LatLng(lat19, lon19);
         var myLL20 = new google.maps.LatLng(lat20, lon20);
 
-        window.MAP_CENTER = myLL14;
+        MAP_CENTER = myLL14;
         clearMarkers();
 
         var marker13 = new google.maps.Marker({
@@ -385,14 +383,11 @@ function setMapOnAll(map) {
     }
 }
 
-
 (function() {
-    var T1URL = "https://io.adafruit.com/api/groups/JWDamsteeg/receive.json?x-aio-key=1aae3c9c6cff44fda53335a156f30f04";
-    $.getJSON(T1URL, function(json) {
+    $.getJSON(TRACKERS_GET_URL, function(json) {
         var T = json.feeds[0].last_value.split(',');
         var lat1 = T[0];
         var lon1 = T[1];
-        console.log(lat1);
         MAP.setCenter(new google.maps.LatLng(lat1, lon1));
-    })
+    });
 })();
