@@ -1,6 +1,6 @@
 /*
     global
-        MAP, MAP_CENTER, MARKERS, TRACKERS_GET_URL, TRACKERS,
+        MAP, MAP_CENTER, TRACKERS_GET_URL, TRACKERS,
         google, $
 */
 
@@ -105,7 +105,7 @@ function initMap() {
     MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
 
     renderMarkers();
-    window.setInterval(renderMarkers, 10000);
+    window.setInterval(renderMarkers, 5000);
 }
 
 function printTrackerContent(number, batPercent, speed) {
@@ -138,11 +138,11 @@ function extractTrackerDataFromJSON(tracker, json) {
         map: MAP,
     });
 
+    marker
+
     marker.addListener('click', function() {
         infoWindow.open(MAP, this);
     });
-
-    MARKERS.push(marker);
 
     // Update Map Polygon
     var path = tracker.poly.getPath();
@@ -164,29 +164,27 @@ function extractTrackerDataFromJSON(tracker, json) {
 
 function renderMarkers() {
     $.getJSON(TRACKERS_GET_URL).then(function(json) {
-        console.log(MARKERS);
         MAP_CENTER = TRACKERS[1].googleLL;
         clearMarkers();
-        console.log(MARKERS);
+        setMapOnMarkers(MAP);
 
         TRACKERS = TRACKERS.map(function(TRACKER) {
             var tracker = extractTrackerDataFromJSON(TRACKER, json);
             return tracker;
         });
-        console.log(MARKERS);
         console.log(Array(100).join('='));
 
     });
 }
 
 function clearMarkers() {
-    setMapOnAll(null);
+    setMapOnMarkers(null);
 }
 
-function setMapOnAll(map) {
-    for (var i = 0; i < MARKERS.length; i++) {
-        MARKERS[i].setMap(map);
-    }
+function setMapOnMarkers(map) {
+    TRACKERS.forEach(function(TRACKER) {
+        TRACKER.marker.setMap(map);
+    });
 }
 
 (function() {
