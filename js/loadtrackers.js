@@ -161,7 +161,8 @@ function extractTrackerDataFromJSON(tracker, json) {
 }
 
 function renderMarkers() {
-    $.getJSON(TRACKERS_GET_URL, function(json) {
+    $.getJSON(TRACKERS_GET_URL).then(function(json) {
+        console.log(json);
         MAP_CENTER = TRACKERS[1].googleLL;
         clearMarkers();
 
