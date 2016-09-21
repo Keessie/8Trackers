@@ -109,7 +109,7 @@ function initMap() {
         renderMarkers();
         window.setInterval(renderMarkers, 5000);
 
-    }, 10);
+    }, 100);
 
 }
 
@@ -178,8 +178,6 @@ function renderMarkers() {
             var tracker = extractTrackerFromJSON(TRACKER, json);
             return tracker;
         });
-
-        setMapOnMarkers(MAP);
 
         console.log(Array(100).join('='));
 
