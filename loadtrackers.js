@@ -1,11 +1,3 @@
-var mapcenter = {
-    lat: 51.998276,
-    lng: 4.353702
-};
-var map;
-var poly;
-var markers = [];
-
 function CenterControl(controlDiv, map) {
 
     // Set CSS for the control border.
@@ -33,7 +25,7 @@ function CenterControl(controlDiv, map) {
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI.addEventListener('click', function() {
-        map.setCenter(window.mapcenter);
+        map.setCenter(window.MAP_CENTER);
     });
 
 }
@@ -65,29 +57,29 @@ function CenterControl2(controlDiv2, map) {
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI2.addEventListener('click', function() {
-        poly.setMap(null);
-        var path13 = poly.getPath();
+        POLY.setMap(null);
+        var path13 = POLY.getPath();
         path13.clear();
-        poly14.setMap(null);
-        var path14 = poly14.getPath();
+        POLY14.setMap(null);
+        var path14 = POLY14.getPath();
         path14.clear();
-        poly15.setMap(null);
-        var path15 = poly15.getPath();
+        POLY15.setMap(null);
+        var path15 = POLY15.getPath();
         path15.clear();
-        poly16.setMap(null);
-        var path16 = poly16.getPath();
+        POLY16.setMap(null);
+        var path16 = POLY16.getPath();
         path16.clear();
-        poly17.setMap(null);
-        var path17 = poly17.getPath();
+        POLY17.setMap(null);
+        var path17 = POLY17.getPath();
         path17.clear();
-        poly18.setMap(null);
-        var path18 = poly18.getPath();
+        POLY18.setMap(null);
+        var path18 = POLY18.getPath();
         path18.clear();
-        poly19.setMap(null);
-        var path19 = poly19.getPath();
+        POLY19.setMap(null);
+        var path19 = POLY19.getPath();
         path19.clear();
-        poly20.setMap(null);
-        var path20 = poly20.getPath();
+        POLY20.setMap(null);
+        var path20 = POLY20.getPath();
         path20.clear();
 
     });
@@ -98,7 +90,7 @@ function initMap() {
     // var myLatLng = {lat: window.lattitude, lng: window.lattitude}; // Number(window.lattitude)
     //var myLatLng = new google.maps.LatLng(51.99704,4.35392);
 
-    map = new google.maps.Map(document.getElementById('map'), {
+    MAP = new google.maps.Map(document.getElementById('map'), {
         center: {
             lat: 51.998276,
             lng: 4.353702
@@ -106,51 +98,51 @@ function initMap() {
         zoom: 16
     });
 
-    poly = new google.maps.Polyline({
-        map: map,
+    POLY = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#8E67FD',
         strokeWeight: 2
     });
 
-    poly14 = new google.maps.Polyline({
-        map: map,
+    POLY14 = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#FD7567',
         strokeWeight: 2
     });
-    poly15 = new google.maps.Polyline({
-        map: map,
+    POLY15 = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#6991FD',
         strokeWeight: 2
     });
-    poly16 = new google.maps.Polyline({
-        map: map,
+    POLY16 = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#00E64D',
         strokeWeight: 2
     });
-    poly17 = new google.maps.Polyline({
-        map: map,
+    POLY17 = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#65DBDB',
         strokeWeight: 2
     });
-    poly18 = new google.maps.Polyline({
-        map: map,
+    POLY18 = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#FF9900',
         strokeWeight: 2
     });
-    poly19 = new google.maps.Polyline({
-        map: map,
+    POLY19 = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#E661AC',
         strokeWeight: 2
     });
-    poly20 = new google.maps.Polyline({
-        map: map,
+    POLY20 = new google.maps.Polyline({
+        map: MAP,
         path: [],
         strokeColor: '#FDF569',
         strokeWeight: 2
@@ -158,18 +150,16 @@ function initMap() {
 
 
     var centerControlDiv = document.createElement('div');
-    var centerControl = new CenterControl(centerControlDiv, map);
+    var centerControl = new CenterControl(centerControlDiv, MAP);
 
     var centerControlDiv2 = document.createElement('div');
-    var centerControl2 = new CenterControl2(centerControlDiv2, map);
+    var centerControl2 = new CenterControl2(centerControlDiv2, MAP);
 
     centerControlDiv.index = 1;
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+    MAP.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
     centerControlDiv2.index = 2;
-    map.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
-
-
+    MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
 };
 
 (function() {
@@ -260,18 +250,18 @@ function initMap() {
         var myLL19 = new google.maps.LatLng(lat19, lon19);
         var myLL20 = new google.maps.LatLng(lat20, lon20);
 
-        window.mapcenter = myLL14;
+        window.MAP_CENTER = myLL14;
         clearMarkers();
 
         var marker13 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=13|8E67FD|000000',
             position: myLL13,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker13);
+        MARKERS.push(marker13);
 
         marker13.addListener('click', function() {
-            infowindow13.open(map, this);
+            infowindow13.open(MAP, this);
         });
 
 
@@ -279,107 +269,107 @@ function initMap() {
         var marker14 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=14|FD7567|000000',
             position: myLL14,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker14);
+        MARKERS.push(marker14);
 
         marker14.addListener('click', function() {
-            infowindow14.open(map, this);
+            infowindow14.open(MAP, this);
         });
 
 
         var marker15 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=15|6991FD|000000',
             position: myLL15,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker15);
+        MARKERS.push(marker15);
         marker15.addListener('click', function() {
-            infowindow15.open(map, this);
+            infowindow15.open(MAP, this);
         });
 
 
         var marker16 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=16|00E64D|000000',
             position: myLL16,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker16);
+        MARKERS.push(marker16);
         marker16.addListener('click', function() {
-            infowindow16.open(map, this);
+            infowindow16.open(MAP, this);
         });
 
         var marker17 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=17|65DBDB|000000',
             position: myLL17,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker17);
+        MARKERS.push(marker17);
         marker17.addListener('click', function() {
-            infowindow17.open(map, this);
+            infowindow17.open(MAP, this);
         });
 
         var marker18 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=18|FF9900|000000',
             position: myLL18,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker18);
+        MARKERS.push(marker18);
         marker18.addListener('click', function() {
-            infowindow18.open(map, this);
+            infowindow18.open(MAP, this);
         });
 
         var marker19 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=19|E661AC|000000',
             position: myLL19,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker19);
+        MARKERS.push(marker19);
         marker19.addListener('click', function() {
-            infowindow19.open(map, this);
+            infowindow19.open(MAP, this);
         });
 
         var marker20 = new google.maps.Marker({
             icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=20|FDF569|000000',
             position: myLL20,
-            map: map,
+            map: MAP,
         });
-        markers.push(marker20);
+        MARKERS.push(marker20);
         marker20.addListener('click', function() {
-            infowindow20.open(map, this);
+            infowindow20.open(MAP, this);
         });
 
-        var path = poly.getPath();
+        var path = POLY.getPath();
         path.push(new google.maps.LatLng(lat13, lon13));
-        poly.setMap(map);
+        POLY.setMap(MAP);
 
-        var path14 = poly14.getPath();
+        var path14 = POLY14.getPath();
         path14.push(new google.maps.LatLng(lat14, lon14));
-        poly14.setMap(map);
+        POLY14.setMap(MAP);
 
-        var path15 = poly15.getPath();
+        var path15 = POLY15.getPath();
         path15.push(new google.maps.LatLng(lat15, lon15));
-        poly15.setMap(map);
+        POLY15.setMap(MAP);
 
-        var path16 = poly16.getPath();
+        var path16 = POLY16.getPath();
         path16.push(new google.maps.LatLng(lat16, lon16));
-        poly16.setMap(map);
+        POLY16.setMap(MAP);
 
-        var path17 = poly17.getPath();
+        var path17 = POLY17.getPath();
         path17.push(myLL17);
-        poly17.setMap(map);
+        POLY17.setMap(MAP);
 
-        var path18 = poly18.getPath();
+        var path18 = POLY18.getPath();
         path18.push(myLL18);
-        poly18.setMap(map);
+        POLY18.setMap(MAP);
 
-        var path19 = poly19.getPath();
+        var path19 = POLY19.getPath();
         path19.push(myLL19);
-        poly19.setMap(map);
+        POLY19.setMap(MAP);
 
-        var path20 = poly20.getPath();
+        var path20 = POLY20.getPath();
         path20.push(myLL20);
-        poly20.setMap(map);
+        POLY20.setMap(MAP);
 
     });
     setTimeout(arguments.callee, 10000);
@@ -390,8 +380,8 @@ function clearMarkers() {
 }
 
 function setMapOnAll(map) {
-    for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(map);
+    for (var i = 0; i < MARKERS.length; i++) {
+        MARKERS[i].setMap(map);
     }
 }
 
@@ -403,6 +393,6 @@ function setMapOnAll(map) {
         var lat1 = T[0];
         var lon1 = T[1];
         console.log(lat1);
-        map.setCenter(new google.maps.LatLng(lat1, lon1));
+        MAP.setCenter(new google.maps.LatLng(lat1, lon1));
     })
 })();
