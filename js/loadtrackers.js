@@ -173,12 +173,14 @@ function renderMarkers() {
     $.getJSON(TRACKERS_GET_URL).then(function(json) {
         MAP_CENTER = TRACKERS[1].googleLL;
         clearMarkers();
-        setMapOnMarkers(MAP);
 
         TRACKERS = TRACKERS.map(function(TRACKER) {
             var tracker = extractTrackerFromJSON(TRACKER, json);
             return tracker;
         });
+
+        setMapOnMarkers(MAP);
+
         console.log(Array(100).join('='));
 
     });
