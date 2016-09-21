@@ -157,7 +157,7 @@ function extractTrackerDataFromJSON(tracker, json) {
     return newTracker;
 }
 
-(function() {
+function renderMarkers() {
     $.getJSON(TRACKERS_GET_URL, function(json) {
         MAP_CENTER = TRACKERS[1].googleLL;
         clearMarkers();
@@ -169,7 +169,12 @@ function extractTrackerDataFromJSON(tracker, json) {
         });
 
     });
-    setTimeout(arguments.callee, 10000);
+}
+
+(function() {
+    renderMarkers();
+    console.log(MARKERS);
+    window.setInterval(renderMarkers, 10000);
 })();
 
 function clearMarkers() {
