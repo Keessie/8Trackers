@@ -103,6 +103,9 @@ function initMap() {
 
     centerControlDiv2.index = 2;
     MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
+
+    renderMarkers();
+    window.setInterval(renderMarkers, 10000);
 }
 
 function printTrackerContent(number, batPercent, speed) {
@@ -170,12 +173,6 @@ function renderMarkers() {
 
     });
 }
-
-(function() {
-    renderMarkers();
-    console.log(MARKERS);
-    window.setInterval(renderMarkers, 10000);
-})();
 
 function clearMarkers() {
     setMapOnAll(null);
