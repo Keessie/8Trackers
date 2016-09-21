@@ -107,6 +107,7 @@ function initMap() {
         MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
 
         renderMarkers();
+        renderMarkers();
         window.setInterval(renderMarkers, 5000);
 
     }, 100);
