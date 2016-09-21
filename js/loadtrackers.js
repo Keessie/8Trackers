@@ -183,7 +183,7 @@ function clearMarkers() {
 
 function setMapOnMarkers(map) {
     TRACKERS.forEach(function(TRACKER) {
-        TRACKER.marker.setMap(map);
+        if (TRACKER.marker) TRACKER.marker.setMap(map);
     });
 }
 
