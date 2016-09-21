@@ -79,33 +79,38 @@ function initMap() {
         zoom: 16
     });
 
-    TRACKERS = TRACKERS.map(function(TRACKER) {
-        var poly = new google.maps.Polyline({
-            map: MAP,
-            path: [],
-            strokeColor: '#' + TRACKER.colorHex,
-            strokeWeight: 2
+    window.setTimeout(function() {
+
+        TRACKERS = TRACKERS.map(function(TRACKER) {
+            var poly = new google.maps.Polyline({
+                map: MAP,
+                path: [],
+                strokeColor: '#' + TRACKER.colorHex,
+                strokeWeight: 2
+            });
+
+            return Object.assign(TRACKER, {
+                poly: poly
+            });
         });
 
-        return Object.assign(TRACKER, {
-            poly: poly
-        });
-    });
+        var centerControlDiv = document.createElement('div');
+        addCenterControl(centerControlDiv, MAP);
 
-    var centerControlDiv = document.createElement('div');
-    addCenterControl(centerControlDiv, MAP);
+        var centerControlDiv2 = document.createElement('div');
+        addCenterControl2(centerControlDiv2, MAP);
 
-    var centerControlDiv2 = document.createElement('div');
-    addCenterControl2(centerControlDiv2, MAP);
+        centerControlDiv.index = 1;
+        MAP.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
-    centerControlDiv.index = 1;
-    MAP.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+        centerControlDiv2.index = 2;
+        MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
 
-    centerControlDiv2.index = 2;
-    MAP.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv2);
+        renderMarkers();
+        window.setInterval(renderMarkers, 5000);
 
-    renderMarkers();
-    window.setInterval(renderMarkers, 5000);
+    }, 10);
+
 }
 
 function printTrackerContent(number, batPercent, speed) {
