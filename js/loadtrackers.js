@@ -117,13 +117,15 @@ function printTrackerContent(number, batPercent, speed) {
     ].join('');
 }
 
-function extractTrackerDataFromJSON(tracker, json) {
+function extractTrackerFromJSON(tracker, json) {
     // Data extraction
     var data = json.feeds[tracker.dataIndex].last_value.split(',');
     var lat = data[0];
     var lon = data[1];
     var speed = data[2];
     var batPercent = data[3];
+
+    console.log(data);
 
     // Info Window
     var infoWindowText = printTrackerContent(tracker.mapIndex, batPercent, speed);
@@ -137,8 +139,6 @@ function extractTrackerDataFromJSON(tracker, json) {
         position: googleLL,
         map: MAP,
     });
-
-    marker
 
     marker.addListener('click', function() {
         infoWindow.open(MAP, this);
@@ -159,6 +159,8 @@ function extractTrackerDataFromJSON(tracker, json) {
         marker: marker
     });
 
+    console.log(newTracker);
+
     return newTracker;
 }
 
@@ -169,7 +171,7 @@ function renderMarkers() {
         setMapOnMarkers(MAP);
 
         TRACKERS = TRACKERS.map(function(TRACKER) {
-            var tracker = extractTrackerDataFromJSON(TRACKER, json);
+            var tracker = extractTrackerFromJSON(TRACKER, json);
             return tracker;
         });
         console.log(Array(100).join('='));
