@@ -142,6 +142,8 @@ function extractTrackerDataFromJSON(tracker, json) {
         infoWindow.open(MAP, this);
     });
 
+    MARKERS.push(marker);
+
     // Update Map Polygon
     var path = tracker.poly.getPath();
     path.push(new google.maps.LatLng(lat, lon));
@@ -168,7 +170,6 @@ function renderMarkers() {
 
         TRACKERS = TRACKERS.map(function(TRACKER) {
             var tracker = extractTrackerDataFromJSON(TRACKER, json);
-            MARKERS.push(tracker.marker);
             return tracker;
         });
 
