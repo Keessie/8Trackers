@@ -1,15 +1,13 @@
-/* eslint-disable no-unused-vars */
+/*
+    eslint-disable no-unused-vars
+*/
 
+/*
+    global Tracker
+*/
 var MAP;
-var POLY;
-var POLY14;
-var POLY15;
-var POLY16;
-var POLY17;
-var POLY18;
-var POLY19;
-var POLY20;
 
+var MARKERS = [];
 var TRACKERS_GET_URL = 'https://io.adafruit.com/api/groups/JWDamsteeg/receive.json?x-aio-key=1aae3c9c6cff44fda53335a156f30f04';
 
 var MAP_CENTER = {
@@ -17,4 +15,13 @@ var MAP_CENTER = {
     lng: 4.353702
 };
 
-var MARKERS = [];
+var TRACKERS = [
+    new Tracker(0, 13, '8E67FD'),
+    new Tracker(1, 14, 'FD7567'),
+    new Tracker(2, 15, '6991FD'),
+    new Tracker(3, 16, '00E64D'),
+    new Tracker(4, 17, '65DBDB'),
+    new Tracker(5, 18, 'FF9900'),
+    new Tracker(6, 19, 'E661AC'),
+    new Tracker(7, 20, 'FDF569')
+];
