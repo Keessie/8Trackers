@@ -66,7 +66,7 @@ var TRACKERS = {
 
             if (tracker.selected === true) {
                 setTimeout(function() {
-                    infoWindow.open(map, this);
+                    infoWindow.open(map, marker);
                 }, 10);
             }
 
