@@ -27,7 +27,7 @@ var TRACKERS = {
             return trackerWithPath;
         });
 
-        return this.collection;
+        return this;
     },
 
     updateFromJSON: function(json, map) {
@@ -62,7 +62,7 @@ var TRACKERS = {
             return newTracker;
         });
 
-        return this.collection;
+        return this;
     },
 
 
@@ -71,7 +71,7 @@ var TRACKERS = {
             if (TRACKER.marker) TRACKER.marker.setMap(map);
         });
 
-        return this.collection;
+        return this;
     }
 
 };
