@@ -14,18 +14,18 @@ function initMap() {
         map.setCenter(TRACKERS.collection[0].googleLatLng);
 
         // Update ListView
-        new Vue({
+        var listView = new Vue({
             el: '#page-trackers-listView',
             data: {
                 trackers: TRACKERS
             }
-        })
-
+        });
 
         // We only want to refresh trackers if the initial `getTrackers()` call succeeds.
         window.setInterval(function() {
             getTrackers().then(function(response2) {
                 renderMarkers(response2.data.feeds, map);
+                listView.trackers = TRACKERS;
             });
         }, TRACKER_UPDATE_INTERVAL);
     });
