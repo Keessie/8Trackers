@@ -9,17 +9,18 @@ function initMap() {
     TRACKERS.appendPaths(map);
     renderMapControls(map);
 
-    // Update ListView
-    new Vue({
-        el: '#page-trackers-listView',
-        data: {
-            trackers: TRACKERS
-        }
-    })
-
     getTrackers().then(function(response1) {
         renderMarkers(response1.data.feeds, map);
         map.setCenter(TRACKERS.collection[0].googleLatLng);
+
+        // Update ListView
+        new Vue({
+            el: '#page-trackers-listView',
+            data: {
+                trackers: TRACKERS
+            }
+        })
+
 
         // We only want to refresh trackers if the initial `getTrackers()` call succeeds.
         window.setInterval(function() {
