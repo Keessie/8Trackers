@@ -27,10 +27,16 @@ html, body {
   background-color: rgba(255,255,255,0.8);
   border-radius: 3px;
   padding: 0 0.3em;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+#page-trackers thead {
+  background-color: rgba(0,0,0,0.1);
 }
 
 #page-trackers td {
-  padding: 0.5em 0.3em;
+  padding: 0.5em;
 }
 
 #page-trackers .header {
@@ -46,9 +52,9 @@ html, body {
 #page-trackers .button {
     display: inline-block;
     background-color: #01CBE1;
-    padding: 0.5em 2em;
+    padding: 0.7em 2em;
     color: white;
-    margin-top: 10px;
+    margin-top: 20px;
     border-radius: 3px;
 }
 
