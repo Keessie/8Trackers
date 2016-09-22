@@ -10,6 +10,7 @@ function initMap() {
     renderMapControls(map);
 
     getTrackers().then(function(json) {
+        console.log(json);
         renderMarkers(json, map);
         map.setCenter(TRACKERS.collection[0].googleLatLng);
 
