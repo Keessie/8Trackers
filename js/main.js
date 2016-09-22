@@ -1,4 +1,4 @@
-/* global TRACKERS, renderMapControls, getTrackers, renderMap, google */
+/* global TRACKERS, renderMapControls, getTrackers, renderMap, google, Vue */
 /* exported initMap */
 
 var TRACKER_UPDATE_INTERVAL = 5000;
@@ -21,8 +21,7 @@ function initMap() {
             },
             methods: {
                 viewMap: function() {
-                    console.log(this)
-                    temp1.style.zIndex = -1
+                    this.$el.style.zIndex = -1;
                 }
             }
         });
