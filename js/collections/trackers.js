@@ -59,6 +59,8 @@ var TRACKERS = {
             tracker.path.getPath().push(new google.maps.LatLng(lat, lng));
             tracker.path.setMap(map);
 
+            console.log(tracker.mapIndex, tracker.selected)
+
             if (tracker.selected === true) {
                 setTimeout(function() {
                     infoWindow.open(map, this);
