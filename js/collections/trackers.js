@@ -39,6 +39,8 @@ var TRACKERS = {
             var speed = data[2];
             var batPercent = data[3];
 
+            console.log(tracker.mapIndex, tracker.selected)
+
             // Processing
             var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed);
             var googleLatLng = createGoogleLatLng(lat, lng);
