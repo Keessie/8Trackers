@@ -50,7 +50,7 @@ var TRACKERS = {
             }
 
             // Event handling
-            marker.addListener('click', function() {
+            marker.addListener('click', function(tracker) {
                 if (this.selected === true) {
                     infoWindow.close();
                     this.selected = false;
@@ -60,7 +60,7 @@ var TRACKERS = {
                 }
 
                 console.log(this.mapIndex, this.selected);
-            }.bind(tracker));
+            }.bind(marker, tracker));
 
             // Update Map Polygon
             tracker.path.getPath().push(new google.maps.LatLng(lat, lng));
