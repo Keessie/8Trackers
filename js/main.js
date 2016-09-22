@@ -74,7 +74,7 @@ function renderBrowserMarker(map) {
     if (!navigator.geolocation) return;
 
     navigator.geolocation.getCurrentPosition(function(pos) {
-        CURRENT_LOCATION_MARKER.setMap(null);
+        if (CURRENT_LOCATION_MARKER) CURRENT_LOCATION_MARKER.setMap(null);
         CURRENT_LOCATION_MARKER = new google.maps.Marker({
             clickable: false,
             icon: markerIcon,
