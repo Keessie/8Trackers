@@ -33,6 +33,7 @@ var TRACKERS = {
     updateFromJSON: function(jsonFeeds, map) {
         this.collection = this.collection.map(function(tracker) {
             // Data extraction
+            console.log(jsonFeeds)
             var data = jsonFeeds[tracker.dataIndex].last_value.split(',');
             var lat = data[0];
             var lng = data[1];
