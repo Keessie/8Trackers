@@ -26,7 +26,6 @@ function renderMarkers(json, map) {
     renderBrowserMarker();
 
     TRACKERS
-        .setMapOnMarkers(null)
         .updateFromJSON(json, map);
 }
 
