@@ -12,9 +12,9 @@
       <div class="header">Trackers</div>
       <div id="page-trackers-listView">
         <li v-for="tracker in trackers">
-          {{ tracker.lat }}
-          {{ tracker.mapIndex }}
-          foo
+          <span>{{ $index }}</span>
+          <span>{{ tracker.mapIndex }}</span>
+          <span>foo</span>
         </li>
       </div>
   </div>
