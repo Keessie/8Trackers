@@ -22,7 +22,7 @@ function initMap() {
             methods: {
                 viewMap: function() {
                     console.log(this)
-                    this.$el.
+                    temp1.style.zIndex = -1
                 }
             }
         });
