@@ -44,6 +44,7 @@ var TRACKERS = {
             var googleLatLng = createGoogleLatLng(lat, lng);
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLatLng, map);
 
+            console.log(tracker.mapIndex, tracker.selected);
             if (tracker.selected === true) {
                 infoWindow.open(map, this);
             }
