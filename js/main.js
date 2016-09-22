@@ -3,6 +3,7 @@
 /* exported initMap */
 
 var TRACKER_UPDATE_INTERVAL = 5000;
+var CURRENT_LOCATION_MARKER = null;
 
 function initMap() {
     var map = renderMap();
@@ -69,21 +70,21 @@ function renderBrowserMarker(map) {
         new google.maps.Point(11,11)
     );
 
-    var myloc = new google.maps.Marker({
-        clickable: false,
-        icon: markerIcon,
-        shadow: null,
-        zIndex: 999,
-        map: map
-    });
-
     console.log(navigator.geolocation);
     if (!navigator.geolocation) return;
 
     navigator.geolocation.getCurrentPosition(function(pos) {
+        CURRENT_LOCATION_MARKER.setMap(null);
+        CURRENT_LOCATION_MARKER = new google.maps.Marker({
+            clickable: false,
+            icon: markerIcon,
+            shadow: null,
+            zIndex: 999,
+            map: map
+        });
         var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
         console.log(me);
-        myloc.setPosition(me);
+        CURRENT_LOCATION_MARKER.setPosition(me);
 
     }, function(error) {
         // ...
