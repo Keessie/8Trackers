@@ -70,6 +70,8 @@ var TRACKERS = {
         this.collection.forEach(function(TRACKER) {
             if (TRACKER.marker) TRACKER.marker.setMap(map);
         });
+
+        return this.collection;
     }
 
 };

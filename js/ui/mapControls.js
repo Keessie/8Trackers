@@ -1,5 +1,19 @@
-/* global google, MAP_CENTER, TRACKERS */
-/* exported renderMapControls */
+/* global google, TRACKERS */
+/* exported renderMap, renderMapControls, MAP_CENTER */
+
+var DEFAULT_CENTER_COORDS = {
+    lat: 51.998276,
+    lng: 4.353702
+};
+
+function renderMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+        center: DEFAULT_CENTER_COORDS,
+        zoom: 16
+    });
+
+    return map;
+}
 
 function renderMapControls(map) {
     var centerControlDiv = renderMapControlCenter(map);
@@ -40,7 +54,8 @@ function renderMapControlCenter(map) {
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI.addEventListener('click', function() {
-        map.setCenter(MAP_CENTER);
+        var centeringCoords = TRACKERS.collection[1].googleLatLng || DEFAULT_CENTER_COORDS;
+        map.setCenter(centeringCoords);
     });
 
     return controlDiv;

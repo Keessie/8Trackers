@@ -1,26 +1,11 @@
-/*
-    global
-        TRACKERS, MAP_CENTER, renderMapControls, getTrackers
-        google
-*/
-/* exported initMap, MAP_CENTER */
+/* global TRACKERS, renderMapControls, getTrackers, renderMap */
 
-function createMap() {
-    var mapOptions = {
-        center: {
-            lat: 51.998276,
-            lng: 4.353702
-        },
-        zoom: 16
-    };
+/* exported initMap */
 
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-    return map;
-}
+var TRACKER_UPDATE_INTERVAL = 5000;
 
 function initMap() {
-    var map = createMap();
-
+    var map = renderMap();
     TRACKERS.appendPaths(map);
     renderMapControls(map);
 
@@ -33,17 +18,12 @@ function initMap() {
             getTrackers().then(function(json) {
                 renderMarkers(json, map);
             });
-        }, 5000);
+        }, TRACKER_UPDATE_INTERVAL);
     });
 }
 
 function renderMarkers(json, map) {
-    MAP_CENTER = TRACKERS.collection[1].googleLatLng;
-    clearMarkers();
-    TRACKERS.updateFromJSON(json, map);
+    TRACKERS
+        .setMapOnMarkers(null)
+        .updateFromJSON(json, map);
 }
-
-function clearMarkers() {
-    TRACKERS.setMapOnMarkers(null);
-}
-
