@@ -47,16 +47,16 @@ var TRACKERS = {
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLatLng, map);
 
             // Event handling
-            marker.addListener('click', function(tracker) {
-                console.log(tracker.selected)
-                if (tracker.selected === true) {
+            marker.addListener('click', function() {
+                console.log(target.selected)
+                if (target.selected === true) {
                     infoWindow.close();
-                    tracker.selected = false;
+                    target.selected = false;
                 } else {
-                    tracker.selected = true;
+                    target.selected = true;
                     infoWindow.open(map, this);
                 }
-            }.bind(marker, tracker));
+            });
 
             // Update Map Polygon
             tracker.path.getPath().push(new google.maps.LatLng(lat, lng));
