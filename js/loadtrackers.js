@@ -31,7 +31,6 @@ function initMap() {
 
     renderMapControls(MAP);
     renderMarkers();
-    renderMarkers();
     window.setInterval(renderMarkers, 5000);
 }
 
