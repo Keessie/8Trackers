@@ -47,7 +47,7 @@ var TRACKERS = {
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLatLng, map);
 
             // Event handling
-            marker.addListener('click', function(tracker) {
+            marker.addListener('click', function() {
                 console.log(tracker)
                 if (tracker.selected === true) {
                     tracker.selected = false;
