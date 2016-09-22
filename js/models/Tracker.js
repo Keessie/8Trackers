@@ -5,6 +5,7 @@ function Tracker (dataIndex, mapIndex, colorHex) {
         dataIndex: dataIndex,
         mapIndex: mapIndex,
         colorHex: colorHex,
+        selected: false,
         googleLatLng: null,
         marker: null,
         path: null

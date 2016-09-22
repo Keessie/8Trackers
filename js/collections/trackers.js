@@ -44,8 +44,19 @@ var TRACKERS = {
             var googleLatLng = createGoogleLatLng(lat, lng);
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLatLng, map);
 
+            if (tracker.selected === true) {
+                infoWindow.open(map, this);
+            }
+
             // Event handling
             marker.addListener('click', function() {
+                if (tracker.selected === true) {
+                    infoWindow.close();
+                    tracker.selected = false;
+                    return;
+                }
+
+                tracker.selected = true;
                 infoWindow.open(map, this);
             });
 

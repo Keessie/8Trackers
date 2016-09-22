@@ -39,9 +39,9 @@ function renderBrowserMarker(map) {
 
     var markerIcon = new google.maps.MarkerImage(
         '//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-        new google.maps.Size(22,22),
-        new google.maps.Point(0,18),
-        new google.maps.Point(11,11)
+        new google.maps.Size(22, 22),
+        new google.maps.Point(0, 18),
+        new google.maps.Point(11, 11)
     );
 
     if (!navigator.geolocation) return;
