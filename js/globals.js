@@ -1,10 +1,9 @@
 /* global Tracker */
-/* exported MAP, MARKERS, TRACKERS_GET_URL, MAP_CENTER, TRACKERS */
+/* exported MAP, MARKERS, MAP_CENTER, TRACKERS */
 
 var MAP;
 
 var MARKERS = [];
-var TRACKERS_GET_URL = 'https://io.adafruit.com/api/groups/JWDamsteeg/receive.json?x-aio-key=1aae3c9c6cff44fda53335a156f30f04';
 
 var MAP_CENTER = {
     lat: 51.998276,

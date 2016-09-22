@@ -1,7 +1,7 @@
 /*
     global
-        MAP, MAP_CENTER, TRACKERS_GET_URL, TRACKERS, renderMapControls
-        google, $
+        MAP, TRACKERS, MAP_CENTER, renderMapControls, getTrackers
+        google
 */
 /* exported initMap, MAP_CENTER */
 
@@ -93,7 +93,7 @@ function extractTrackerFromJSON(tracker, json) {
 }
 
 function renderMarkers() {
-    $.getJSON(TRACKERS_GET_URL).then(function(json) {
+    getTrackers.then(function(json) {
         MAP_CENTER = TRACKERS[1].googleLatLng;
         clearMarkers();
 
@@ -117,7 +117,7 @@ function setMapOnMarkers(map) {
 }
 
 (function() {
-    $.getJSON(TRACKERS_GET_URL, function(json) {
+    getTrackers().then(function(json) {
         var tracker = json.feeds[0].last_value.split(',');
         var lat1 = tracker[0];
         var lng1 = tracker[1];
