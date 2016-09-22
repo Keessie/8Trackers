@@ -18,12 +18,17 @@ function renderMap() {
 function renderMapControls(map) {
     var centerControlDiv = renderMapControlCenter(map);
     var clearPathsControlDiv = renderMapControlClearPaths();
+    var listViewControlDiv = renderMapControlListView();
 
     centerControlDiv.index = 1;
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
 
     clearPathsControlDiv.index = 2;
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(clearPathsControlDiv);
+
+    console.log(google.maps.ControlPosition);
+    clearPathsControlDiv.index = 3;
+    map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(listViewControlDiv);
 }
 
 function renderMapControlCenter(map) {
@@ -72,6 +77,29 @@ function renderMapControlClearPaths() {
             var path = TRACKER.path.getPath();
             path.clear();
         });
+    });
+
+    return controlDiv;
+}
+
+function renderMapControlListView() {
+    var controlDiv = document.createElement('div');
+
+    // Set CSS for the control border.
+    var controlUI = document.createElement('div');
+    controlUI.className = 'map-control-button';
+    controlUI.title = 'show trackers list';
+    controlDiv.appendChild(controlUI);
+
+    // Set CSS for the control interior.
+    var controlText = document.createElement('div');
+    controlText.className = 'map-control-button-text';
+    controlText.innerHTML = 'T List';
+    controlUI.appendChild(controlText);
+
+    // Setup the click event listeners: simply set the map to Chicago.
+    controlUI.addEventListener('click', function() {
+        console.log('foo');
     });
 
     return controlDiv;
