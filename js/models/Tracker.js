@@ -4,6 +4,10 @@ function Tracker (dataIndex, mapIndex, colorHex) {
     return {
         dataIndex: dataIndex,
         mapIndex: mapIndex,
-        colorHex: colorHex
+        colorHex: colorHex,
+        googleLatLng: null,
+        batPercent: null,
+        marker: null,
+        poly: null
     };
 }

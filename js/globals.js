@@ -1,10 +1,6 @@
-/*
-    eslint-disable no-unused-vars
-*/
+/* global Tracker */
+/* exported MAP, MARKERS, TRACKERS_GET_URL, MAP_CENTER, TRACKERS */
 
-/*
-    global Tracker
-*/
 var MAP;
 
 var MARKERS = [];
