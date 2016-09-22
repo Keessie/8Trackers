@@ -71,7 +71,7 @@ var TRACKERS = {
             if (item.mapIndex === mapIndex) tracker = item;
         });
         return tracker;
-    }
+    },
 
 
     setMapOnMarkers: function(map) {
