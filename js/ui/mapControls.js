@@ -93,12 +93,13 @@ function renderMapControlListView() {
     // Set CSS for the control interior.
     var controlText = document.createElement('div');
     controlText.className = 'map-control-button-text';
-    controlText.innerHTML = 'T List';
+    controlText.innerHTML = 'Trackers List';
     controlUI.appendChild(controlText);
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI.addEventListener('click', function() {
-        console.log('foo');
+        document.getElementById('page-trackers').style.zIndex = 1;
+
     });
 
     return controlDiv;
