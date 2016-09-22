@@ -11,11 +11,25 @@
   <div id="page-trackers">
       <div class="header">Trackers</div>
       <div id="page-trackers-listView">
-        <li v-for="tracker in trackers">
-          <span>{{ $index }}</span>
-          <span>{{ tracker.mapIndex }}</span>
-          <span>foo</span>
-        </li>
+        <table>
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>Spd</td>
+              <td>Lat</td>
+              <td>Lng</td>
+              <td>Bat</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="tracker in trackers">
+              <td>{{ tracker.mapIndex }}</td>
+              <td>{{ tracker.lon }}</td>
+              <td>{{ tracker.lng }}</td>
+              <td>{{ tracker.batPercent }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
   </div>
 
