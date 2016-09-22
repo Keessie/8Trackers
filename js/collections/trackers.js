@@ -46,11 +46,12 @@ var TRACKERS = {
 
             // Event handling
             marker.addListener('click', function(tracker) {
-                if (this.selected === true) {
+                console.log(tracker.selected)
+                if (tracker.selected === true) {
                     infoWindow.close();
-                    this.selected = false;
+                    tracker.selected = false;
                 } else {
-                    this.selected = true;
+                    tracker.selected = true;
                     infoWindow.open(map, this);
                 }
             }.bind(marker, tracker));
@@ -68,12 +69,12 @@ var TRACKERS = {
             }
 
             // Return some tracker data
-            var newTracker = Object.assign({}, tracker, {
+            var updatedTracker = Object.assign({}, tracker, {
                 googleLatLng: googleLatLng,
                 marker: marker
             });
 
-            return newTracker;
+            return updatedTracker;
         });
 
         return this;
