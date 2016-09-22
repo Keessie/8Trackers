@@ -43,6 +43,7 @@ html, body {
   color: #fff;
   font-size: 24px;
   margin: 20px 0 10px 0;
+  text-shadow: 0 0 13px #000;
 }
 
 #page-trackers .content {
@@ -56,6 +57,7 @@ html, body {
     color: white;
     margin-top: 20px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .map-control-button {
