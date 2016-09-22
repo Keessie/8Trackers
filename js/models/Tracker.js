@@ -6,8 +6,7 @@ function Tracker (dataIndex, mapIndex, colorHex) {
         mapIndex: mapIndex,
         colorHex: colorHex,
         googleLatLng: null,
-        batPercent: null,
         marker: null,
-        poly: null
+        path: null
     };
 }
