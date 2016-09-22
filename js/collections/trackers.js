@@ -51,15 +51,16 @@ var TRACKERS = {
 
             // Event handling
             marker.addListener('click', function() {
-                if (tracker.selected === true) {
+                if (this.selected === true) {
                     infoWindow.close();
-                    tracker.selected = false;
-                    return;
+                    this.selected = false;
+                } else {
+                    this.selected = true;
+                    infoWindow.open(map, this);
                 }
 
-                tracker.selected = true;
-                infoWindow.open(map, this);
-            });
+                console.log(this.mapIndex, this.selected);
+            }.bind(tracker));
 
             // Update Map Polygon
             tracker.path.getPath().push(new google.maps.LatLng(lat, lng));
