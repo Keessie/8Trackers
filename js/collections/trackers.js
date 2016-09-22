@@ -48,12 +48,11 @@ var TRACKERS = {
 
             // Event handling
             marker.addListener('click', function() {
-                console.log(target.selected)
-                if (target.selected === true) {
+                if (tracker.selected === true) {
+                    tracker.selected = false;
                     infoWindow.close();
-                    target.selected = false;
                 } else {
-                    target.selected = true;
+                    tracker.selected = true;
                     infoWindow.open(map, this);
                 }
             });
