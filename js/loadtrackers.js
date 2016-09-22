@@ -93,7 +93,7 @@ function extractTrackerFromJSON(tracker, json) {
 }
 
 function renderMarkers() {
-    getTrackers.then(function(json) {
+    getTrackers().then(function(json) {
         MAP_CENTER = TRACKERS[1].googleLatLng;
         clearMarkers();
 
