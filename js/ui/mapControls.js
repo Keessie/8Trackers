@@ -43,7 +43,7 @@ function renderMapControlCenter(map) {
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI.addEventListener('click', function() {
-        var centeringCoords = TRACKERS.collection[1].googleLatLng || DEFAULT_CENTER_COORDS;
+        var centeringCoords = TRACKERS.getByMapIndex(18).googleLatLng || DEFAULT_CENTER_COORDS;
         map.setCenter(centeringCoords);
     });
 

@@ -65,6 +65,14 @@ var TRACKERS = {
         return this;
     },
 
+    getByMapIndex: function(mapIndex) {
+        var tracker = null;
+        this.collection.forEach(function(item) {
+            if (item.mapIndex === mapIndex) tracker = item;
+        });
+        return tracker;
+    }
+
 
     setMapOnMarkers: function(map) {
         this.collection.forEach(function(TRACKER) {
