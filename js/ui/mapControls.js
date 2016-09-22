@@ -67,7 +67,7 @@ function renderMapControlClearPaths() {
 
     // Setup the click event listeners: simply set the map to Chicago.
     controlUI.addEventListener('click', function() {
-        TRACKERS.forEach(function(TRACKER) {
+        TRACKERS.collection.forEach(function(TRACKER) {
             TRACKER.poly.setMap(null);
             var path = TRACKER.poly.getPath();
             path.clear();
