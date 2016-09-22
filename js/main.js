@@ -18,6 +18,11 @@ function initMap() {
             el: '#page-trackers-listView',
             data: {
                 trackers: TRACKERS.collection
+            },
+            methods: {
+                viewMap: function() {
+                    console.log(this)
+                }
             }
         });
 

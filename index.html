@@ -16,8 +16,8 @@
             <tr>
               <td>#</td>
               <td>Spd</td>
-              <td>Lat</td>
-              <td>Lng</td>
+              <td>Latitude</td>
+              <td>Longitude</td>
               <td>Bat</td>
             </tr>
           </thead>
@@ -27,10 +27,11 @@
               <td>{{ tracker.speed }}</td>
               <td>{{ tracker.lat }}</td>
               <td>{{ tracker.lng }}</td>
-              <td>{{ tracker.batPercent }}</td>
+              <td>{{ tracker.batPercent }}%</td>
             </tr>
           </tbody>
         </table>
+        <div v-on:click="viewMap">View Map</div>
       </div>
   </div>
 
