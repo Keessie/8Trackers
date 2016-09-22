@@ -27,10 +27,10 @@ function renderMarkers(json, map) {
         .removeMarkers(map)
         .updateFromJSON(json, map);
 
-    renderBrowserMarker(map);
+    renderCurrentLocationMarker(map);
 }
 
-function renderBrowserMarker(map) {
+function renderCurrentLocationMarker(map) {
     var options = {
         enableHighAccuracy: true,
         timeout: 5000,

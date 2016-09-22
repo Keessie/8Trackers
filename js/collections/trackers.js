@@ -44,8 +44,6 @@ var TRACKERS = {
             var googleLatLng = createGoogleLatLng(lat, lng);
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLatLng, map);
 
-            console.log(tracker.mapIndex, tracker.selected);
-
             // Event handling
             marker.addListener('click', function(tracker) {
                 if (this.selected === true) {
@@ -55,8 +53,6 @@ var TRACKERS = {
                     this.selected = true;
                     infoWindow.open(map, this);
                 }
-
-                console.log(this.mapIndex, this.selected);
             }.bind(marker, tracker));
 
             // Update Map Polygon
@@ -64,7 +60,9 @@ var TRACKERS = {
             tracker.path.setMap(map);
 
             if (tracker.selected === true) {
-                infoWindow.open(map, this);
+                setTimeout(function() {
+                    infoWindow.open(map, this);
+                }, 10);
             }
 
             // Return some tracker data
