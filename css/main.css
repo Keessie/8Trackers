@@ -25,16 +25,31 @@ html, body {
 #page-trackers table {
   width: 100%;
   background-color: rgba(255,255,255,0.8);
+  border-radius: 3px;
+  padding: 0 0.3em;
+}
+
+#page-trackers td {
+  padding: 0.5em 0.3em;
 }
 
 #page-trackers .header {
   color: #fff;
-  font-size: 20px;
-  text-align: left;
+  font-size: 24px;
+  margin: 20px 0 10px 0;
 }
 
 #page-trackers .content {
   display: inline-block;
+}
+
+#page-trackers .button {
+    display: inline-block;
+    background-color: #01CBE1;
+    padding: 0.5em 2em;
+    color: white;
+    margin-top: 10px;
+    border-radius: 3px;
 }
 
 .map-control-button {
