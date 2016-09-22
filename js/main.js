@@ -17,7 +17,7 @@ function initMap() {
         var listView = new Vue({
             el: '#page-trackers-listView',
             data: {
-                trackers: TRACKERS
+                trackers: TRACKERS.collection
             }
         });
 
@@ -25,7 +25,7 @@ function initMap() {
         window.setInterval(function() {
             getTrackers().then(function(response2) {
                 renderMarkers(response2.data.feeds, map);
-                listView.trackers = TRACKERS;
+                listView.trackers = TRACKERS.collection;
             });
         }, TRACKER_UPDATE_INTERVAL);
     });
