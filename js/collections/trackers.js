@@ -70,7 +70,7 @@ var TRACKERS = {
             }
 
             // Return some tracker data
-            var updatedTracker = Object.assign({}, tracker, {
+            var updatedTracker = Object.assign(tracker, {
                 googleLatLng: googleLatLng,
                 marker: marker
             });
