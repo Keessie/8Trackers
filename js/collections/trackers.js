@@ -82,7 +82,7 @@ var TRACKERS = {
         return this;
     },
 
-    removeMarkers: function(map) {
+    removeMarkers: function() {
         this.setMapOnMarkers(null);
         return this;
     }

@@ -1,5 +1,4 @@
-/* global TRACKERS, renderMapControls, getTrackers, renderMap */
-
+/* global TRACKERS, renderMapControls, getTrackers, renderMap, google */
 /* exported initMap */
 
 var TRACKER_UPDATE_INTERVAL = 5000;
@@ -31,38 +30,13 @@ function renderMarkers(json, map) {
     renderBrowserMarker(map);
 }
 
-function fuck(map) {
+function renderBrowserMarker(map) {
     var options = {
         enableHighAccuracy: true,
         timeout: 5000,
         maximumAge: 0
     };
 
-    function success(pos) {
-        var crd = pos.coords;
-        console.log('Your current position is:');
-        console.log('Latitude : ' + crd.latitude);
-        console.log('Longitude: ' + crd.longitude);
-        console.log('More or less ' + crd.accuracy + ' meters.');
-
-        var googleLatLng = createGoogleLatLng(lat, lng);
-        var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLatLng, map);
-        var markerIcon = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=""|' + colorHex + '|000000';
-        var marker = new google.maps.Marker({
-            icon: markerIcon,
-            position: googleLatLng,
-            map: map,
-        });
-    };
-
-    function error(err) {
-        console.warn('Geolocation error: ' + err.code + '): ' + err.message);
-    };
-
-    navigator.geolocation.getCurrentPosition(success, error, options);
-}
-
-function renderBrowserMarker(map) {
     var markerIcon = new google.maps.MarkerImage(
         '//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
         new google.maps.Size(22,22),
@@ -70,7 +44,6 @@ function renderBrowserMarker(map) {
         new google.maps.Point(11,11)
     );
 
-    console.log(navigator.geolocation);
     if (!navigator.geolocation) return;
 
     navigator.geolocation.getCurrentPosition(function(pos) {
@@ -82,11 +55,9 @@ function renderBrowserMarker(map) {
             zIndex: 999,
             map: map
         });
-        var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-        console.log(me);
-        CURRENT_LOCATION_MARKER.setPosition(me);
-
+        var googleLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        CURRENT_LOCATION_MARKER.setPosition(googleLatLng);
     }, function(error) {
-        // ...
-    });
+        console.warn('`navigator.geolocation.getCurrentPosition()` failed: ' + JSON.stringify(error));
+    }, options);
 }
