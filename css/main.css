@@ -11,6 +11,9 @@ html, body {
 #page-trackers {
   background-color: red;
   z-index: 1;
+  width: 100%;
+  position: absolute;
+  top: 0;
 }
 
 .map-control-button {

@@ -8,9 +8,17 @@
   </head>
 <body>
   <div id="page-map"></div>
-  <div id="page-trackers"></div>
+  <div id="page-trackers">
+      <div class="header">Trackers</div>
+      <div id="page-trackers-listView">
+        <li v-for="tracker in trackers">
+          {{ tracker.lat }}
+        </li>
+      </div>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.14.0/axios.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.14.0/axios.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
   <script src="js/services/getTrackers.js"></script>
   <script src="js/models/Tracker.js"></script>
   <script src="js/collections/trackers.js"></script>
