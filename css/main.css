@@ -4,8 +4,13 @@ html, body {
   padding: 0;
 }
 
-#map {
+#page-map, #page-trackers {
   height: 100%;
+}
+
+#page-trackers {
+  background-color: red;
+  z-index: 1;
 }
 
 .map-control-button {

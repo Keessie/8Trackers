@@ -7,7 +7,7 @@ var DEFAULT_CENTER_COORDS = {
 };
 
 function renderMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById('page-map'), {
         center: DEFAULT_CENTER_COORDS,
         zoom: 16
     });
