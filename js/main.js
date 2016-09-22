@@ -61,7 +61,12 @@ function fuck(map) {
 }
 
 function renderBrowserMarker(map) {
-    var markerIcon = 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=100|000000|000000';
+    var markerIcon = new google.maps.MarkerImage(
+        '//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
+        new google.maps.Size(22,22),
+        new google.maps.Point(0,18),
+        new google.maps.Point(11,11)
+    );
 
     var myloc = new google.maps.Marker({
         clickable: false,
