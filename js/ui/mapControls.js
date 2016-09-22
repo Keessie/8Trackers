@@ -31,18 +31,13 @@ function renderMapControlCenter(map) {
 
     // Set CSS for the control border.
     var controlUI = document.createElement('div');
-    controlUI.id = 'map-control-center';
+    controlUI.className = 'map-control-button';
     controlUI.title = 'recenter the map';
     controlDiv.appendChild(controlUI);
 
     // Set CSS for the control interior.
     var controlText = document.createElement('div');
-    controlText.style.color = 'rgb(25,25,25)';
-    controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-    controlText.style.fontSize = '16px';
-    controlText.style.lineHeight = '38px';
-    controlText.style.paddingLeft = '5px';
-    controlText.style.paddingRight = '5px';
+    controlText.className = 'map-control-button-text';
     controlText.innerHTML = 'Center T14';
     controlUI.appendChild(controlText);
 
@@ -59,30 +54,19 @@ function renderMapControlClearPaths() {
     var controlDiv = document.createElement('div');
 
     // Set CSS for the control border.
-    var controlUI2 = document.createElement('div');
-    controlUI2.style.backgroundColor = '#fff';
-    controlUI2.style.border = '2px solid #fff';
-    controlUI2.style.borderRadius = '3px';
-    controlUI2.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
-    controlUI2.style.cursor = 'pointer';
-    controlUI2.style.marginBottom = '0px';
-    controlUI2.style.textAlign = 'center';
-    controlUI2.title = 'Clear paths';
-    controlDiv.appendChild(controlUI2);
+    var controlUI = document.createElement('div');
+    controlUI.className = 'map-control-button';
+    controlUI.title = 'Clear paths';
+    controlDiv.appendChild(controlUI);
 
     // Set CSS for the control interior.
-    var controlText2 = document.createElement('div');
-    controlText2.style.color = 'rgb(25,25,25)';
-    controlText2.style.fontFamily = 'Roboto,Arial,sans-serif';
-    controlText2.style.fontSize = '16px';
-    controlText2.style.lineHeight = '38px';
-    controlText2.style.paddingLeft = '5px';
-    controlText2.style.paddingRight = '5px';
-    controlText2.innerHTML = 'Clear path';
-    controlUI2.appendChild(controlText2);
+    var controlText = document.createElement('div');
+    controlText.className = 'map-control-button-text';
+    controlText.innerHTML = 'Clear path';
+    controlUI.appendChild(controlText);
 
     // Setup the click event listeners: simply set the map to Chicago.
-    controlUI2.addEventListener('click', function() {
+    controlUI.addEventListener('click', function() {
         TRACKERS.forEach(function(TRACKER) {
             TRACKER.poly.setMap(null);
             var path = TRACKER.poly.getPath();
