@@ -75,8 +75,11 @@ function renderBrowserMarker(map) {
         map: map
     });
 
-    if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
+    if (!navigator.geolocation) return;
+
+    navigator.geolocation.getCurrentPosition(function(pos) {
         var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        console.log(me);
         myloc.setPosition(me);
     }, function(error) {
         // ...
