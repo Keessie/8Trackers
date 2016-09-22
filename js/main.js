@@ -75,6 +75,7 @@ function renderBrowserMarker(map) {
         map: map
     });
 
+    console.log(navigator.geolocation);
     if (!navigator.geolocation) return;
 
     navigator.geolocation.getCurrentPosition(function(pos) {
