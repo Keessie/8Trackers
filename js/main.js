@@ -15,13 +15,14 @@ function initMap() {
 
         // Update ListView
         var listView = new Vue({
-            el: '#page-trackers-listView',
+            el: '#page-trackers',
             data: {
                 trackers: TRACKERS.collection
             },
             methods: {
                 viewMap: function() {
                     console.log(this)
+                    this.$el.
                 }
             }
         });

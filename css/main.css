@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 #page-map, #page-trackers {
@@ -22,8 +23,11 @@ html, body {
 
 #page-trackers table {
   background-color: rgba(255,255,255,0.8);
-  margin: 0 auto;
-  width: 300px;
+}
+
+#page-trackers .header {
+  color: #fff;
+  font-size: 20px;
 }
 
 .map-control-button {
@@ -37,7 +41,6 @@ html, body {
 
 .map-control-button-text {
   color: rgb(25,25,25);
-  font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 38px;
   padding-left: 5px;

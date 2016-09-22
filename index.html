@@ -9,30 +9,30 @@
 <body>
   <div id="page-map"></div>
   <div id="page-trackers">
+    <div class="content">
       <div class="header">Trackers</div>
-      <div id="page-trackers-listView">
-        <table>
-          <thead>
-            <tr>
-              <td>#</td>
-              <td>Spd</td>
-              <td>Latitude</td>
-              <td>Longitude</td>
-              <td>Bat</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="tracker in trackers">
-              <td>{{ tracker.mapIndex }}</td>
-              <td>{{ tracker.speed }}</td>
-              <td>{{ tracker.lat }}</td>
-              <td>{{ tracker.lng }}</td>
-              <td>{{ tracker.batPercent }}%</td>
-            </tr>
-          </tbody>
-        </table>
-        <div v-on:click="viewMap">View Map</div>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <td>#</td>
+            <td>Spd</td>
+            <td>Latitude</td>
+            <td>Longitude</td>
+            <td>Bat</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="tracker in trackers">
+            <td>{{ tracker.mapIndex }}</td>
+            <td>{{ tracker.speed }}</td>
+            <td>{{ tracker.lat }}</td>
+            <td>{{ tracker.lng }}</td>
+            <td>{{ tracker.batPercent }}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="button" v-on:click="viewMap">View Map</div>
   </div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.14.0/axios.min.js"></script>
