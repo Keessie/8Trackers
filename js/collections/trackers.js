@@ -30,10 +30,10 @@ var TRACKERS = {
         return this;
     },
 
-    updateFromJSON: function(json, map) {
+    updateFromJSON: function(jsonFeeds, map) {
         this.collection = this.collection.map(function(tracker) {
             // Data extraction
-            var data = json.feeds[tracker.dataIndex].last_value.split(',');
+            var data = jsonFeeds[tracker.dataIndex].last_value.split(',');
             var lat = data[0];
             var lng = data[1];
             var speed = data[2];
