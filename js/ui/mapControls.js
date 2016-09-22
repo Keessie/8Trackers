@@ -26,7 +26,6 @@ function renderMapControls(map) {
     clearPathsControlDiv.index = 2;
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(clearPathsControlDiv);
 
-    console.log(google.maps.ControlPosition);
     clearPathsControlDiv.index = 3;
     map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(listViewControlDiv);
 }
