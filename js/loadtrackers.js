@@ -1,9 +1,11 @@
 /*
     global
-        MAP, TRACKERS, MAP_CENTER, renderMapControls, getTrackers
+        TRACKERS, MAP_CENTER, renderMapControls, getTrackers
         google
 */
 /* exported initMap, MAP_CENTER */
+
+var MAP = null;
 
 function initMap() {
     MAP = new google.maps.Map(document.getElementById('map'), {

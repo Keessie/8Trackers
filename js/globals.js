@@ -1,7 +1,5 @@
 /* global Tracker */
-/* exported MAP, MARKERS, MAP_CENTER, TRACKERS */
-
-var MAP;
+/* exported MARKERS, MAP_CENTER, TRACKERS */
 
 var MARKERS = [];
 
