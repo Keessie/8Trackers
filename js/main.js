@@ -23,10 +23,11 @@ function initMap() {
 }
 
 function renderMarkers(json, map) {
-    renderBrowserMarker(map);
-
     TRACKERS
+        .removeMarkers(map)
         .updateFromJSON(json, map);
+
+    renderBrowserMarker(map);
 }
 
 function fuck(map) {

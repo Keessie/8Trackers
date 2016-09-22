@@ -80,6 +80,10 @@ var TRACKERS = {
         });
 
         return this;
+    },
+
+    removeMarkers: function(map) {
+        this.setMapOnMarkers(null);
     }
 
 };
