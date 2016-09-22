@@ -23,7 +23,7 @@ function initMap() {
 }
 
 function renderMarkers(json, map) {
-    renderBrowserMarker();
+    renderBrowserMarker(map);
 
     TRACKERS
         .updateFromJSON(json, map);
@@ -78,6 +78,7 @@ function renderBrowserMarker(map) {
         var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
         console.log(me);
         myloc.setPosition(me);
+
     }, function(error) {
         // ...
     });
