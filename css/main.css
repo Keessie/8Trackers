@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 #page-map, #page-trackers {
@@ -46,8 +46,8 @@ html, body {
 
 #page-trackers .header {
   color: #fff;
-  font-size: 24px;
-  margin: 20px 0 10px 0;
+  font-size: 26px;
+  margin: 28px 0;
   text-shadow: 0 0 13px #000;
   float: left;
 }
@@ -62,9 +62,14 @@ html, body {
     padding: 0.7em 2em;
     color: white;
     margin-top: 20px;
-    border-radius: 3px;
     cursor: pointer;
     float: right;
+
+    height: 44px;
+    width: 44px;
+    line-height: 44px;
+    border-radius: 22px;
+    font-size: 22px;
 }
 
 .map-control-button {

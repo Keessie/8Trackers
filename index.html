@@ -19,7 +19,9 @@
       <table>
         <thead>
           <tr>
-            <td>#</td>
+            <td>
+              <i class="fa fa-hashtag"></i>
+            </td>
             <td>
               <i class="fa fa-rocket"></i>
             </td>
@@ -33,8 +35,8 @@
             v-for="tracker in trackers"
             v-on:click="centerMapOnTracker(tracker)"
           >
-            <td>{{ tracker.mapIndex }} km/h</td>
-            <td>{{ tracker.speed }}</td>
+            <td>{{ tracker.mapIndex }}</td>
+            <td>{{ tracker.speed }} km/h</td>
             <td>{{ tracker.batPercent }}%</td>
           </tr>
         </tbody>
