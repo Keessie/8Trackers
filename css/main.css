@@ -84,3 +84,7 @@ html, body {
 .gm-style-iw td {
   padding: 0 0.5em;
 }
+
+.gm-style-iw table {
+  margin: 0 0.5em;
+}

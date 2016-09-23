@@ -126,8 +126,8 @@ function createInfoWindow(number, batPercent, speed, displacement) {
     var displacementText = displacement ? displacement + ' m' : 'n/a';
     /* eslint-disable indent */
     var infoWindowText = [
-        '<h3>Tracker ', number, '</h3>',
-        '</br>',
+        '<div>Tracker ', number, '</div>',
+        '<hr>',
         '<table>',
             '<tr>',
                 '<td>Battery</td>',
