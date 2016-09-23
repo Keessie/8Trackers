@@ -38,7 +38,7 @@ function renderMapControlClearPaths() {
     // Set CSS for the control interior.
     var controlText = document.createElement('div');
     controlText.className = 'map-control-button-text';
-    controlText.innerHTML = 'Clear path';
+    controlText.innerHTML = 'Clear paths';
     controlUI.appendChild(controlText);
 
     // Setup the click event listeners: simply set the map to Chicago.

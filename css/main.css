@@ -37,12 +37,16 @@ html, body {
   font-size: 1.3em;
 }
 
+#page-trackers thead td {
+  padding: 0.6em 0.5em;
+}
+
 #page-trackers tbody tr:nth-of-type(odd) {
   background-color: #fff;
 }
 
 #page-trackers td {
-  padding: 1em 0.5em;
+  padding: 1.2em 0.5em;
 }
 
 #page-trackers .header {
@@ -70,6 +74,10 @@ html, body {
     line-height: 44px;
     border-radius: 22px;
     font-size: 22px;
+}
+
+#page-trackers .fa-close {
+  margin: 1px 0 0 1px;
 }
 
 .map-control-button {
