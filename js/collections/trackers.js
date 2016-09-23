@@ -43,7 +43,7 @@ var TRACKERS = {
             var trackerGoogleLatLng = new google.maps.LatLng(lat, lng);
             var distanceFromUser = null;
             if (CURRENT_LOCATION_MARKER) {
-                var userGoogleLatLng = google.maps.LatLng(
+                var userGoogleLatLng = new google.maps.LatLng(
                     CURRENT_LOCATION_MARKER.position.lat(),
                     CURRENT_LOCATION_MARKER.position.lng()
                 );
