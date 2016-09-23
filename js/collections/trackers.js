@@ -55,7 +55,7 @@ var TRACKERS = {
                 }
             });
 
-            marker.addListener('closeclick', function() {
+            infoWindow.addListener('closeclick', function() {
                 console.log(tracker.selected);
                 tracker.selected = false;
             });
