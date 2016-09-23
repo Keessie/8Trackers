@@ -41,15 +41,20 @@ var TRACKERS = {
 
             // Processing
             var trackerGoogleLatLng = new google.maps.LatLng(lat, lng);
-            var userGoogleLatLng = new google.maps.LatLng(
-                CURRENT_LOCATION_MARKER.position.lat(),
-                CURRENT_LOCATION_MARKER.position.lng()
-            );
+            var distanceFromUser = null;
+            if (CURRENT_LOCATION_MARKER) {
+                var userGoogleLatLng = google.maps.LatLng(
+                    CURRENT_LOCATION_MARKER.position.lat(),
+                    CURRENT_LOCATION_MARKER.position.lng()
+                );
 
-            var distanceFromUser = google.maps.geometry.spherical.computeDistanceBetween(
-                trackerGoogleLatLng,
-                userGoogleLatLng
-            );
+                distanceFromUser = google.maps.geometry.spherical.computeDistanceBetween(
+                    trackerGoogleLatLng,
+                    userGoogleLatLng
+                );
+            }
+
+            console.log(distanceFromUser);
 
             var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed, distanceFromUser);
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, trackerGoogleLatLng, map);
@@ -118,13 +123,14 @@ var TRACKERS = {
 
 };
 
-function createInfoWindow(number, batPercent, speed, distance) {
+function createInfoWindow(number, batPercent, speed, displacement) {
+    var displacementText = 'User ∆: ' + displacement || 'n/a';
     var infoWindowText = [
         'Tracker ', number, '.</p>',
         'Bat: ', batPercent, '%',
         'Speed: ', speed, ' km/h',
         '</br>',
-        'User ∆: ', distance
+        displacementText
     ].join('');
 
     var infoWindow = new google.maps.InfoWindow({ content: infoWindowText });
