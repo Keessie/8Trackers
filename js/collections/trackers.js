@@ -121,11 +121,12 @@ var TRACKERS = {
 
 };
 
+
 function createInfoWindow(number, batPercent, speed, displacement) {
     var displacementText = displacement ? displacement + ' m' : 'n/a';
+    /* eslint-disable indent */
     var infoWindowText = [
         '<h3>Tracker ', number, '</h3>',
-        '</br>',
         '</br>',
         '<table>',
             '<tr>',
@@ -138,10 +139,11 @@ function createInfoWindow(number, batPercent, speed, displacement) {
             '</tr>',
             '<tr>',
                 '<td>User ∆</td>',
-                '<td>', displacementText , '%</td>',
+                '<td>', displacementText , '</td>',
             '</tr>',
         '</table>',
     ].join('');
+    /* eslint-enable indent */
 
     var infoWindow = new google.maps.InfoWindow({ content: infoWindowText });
     return infoWindow;

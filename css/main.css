@@ -76,3 +76,11 @@ html, body {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.gm-style-iw tr td:first-of-type {
+    font-weight: 800;
+}
+
+.gm-style-iw td {
+  padding: 0 0.5em;
+}
