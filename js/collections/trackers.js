@@ -48,15 +48,11 @@ var TRACKERS = {
                     CURRENT_LOCATION_MARKER.position.lng()
                 );
 
-                console.log(userGoogleLatLng);
-
-                distanceFromUser = google.maps.geometry.spherical.computeDistanceBetween(
+                distanceFromUser = Math.round(google.maps.geometry.spherical.computeDistanceBetween(
                     trackerGoogleLatLng,
                     userGoogleLatLng
-                );
+                ));
             }
-
-            console.log(distanceFromUser);
 
             var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed, distanceFromUser);
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, trackerGoogleLatLng, map);
