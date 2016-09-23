@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
 <body>
@@ -12,14 +13,19 @@
   <div id="page-trackers">
     <div class="content">
       <div class="header">Trackers</div>
+      <div class="button" v-on:click="viewMap">
+        <i class="fa fa-close"></i>
+      </div>
       <table>
         <thead>
           <tr>
             <td>#</td>
-            <td>Spd</td>
-            <td>Latitude</td>
-            <td>Longitude</td>
-            <td>Bat</td>
+            <td>
+              <i class="fa fa-rocket"></i>
+            </td>
+            <td>
+              <i class="fa fa-battery"></i>
+            </td>
           </tr>
         </thead>
         <tbody>
@@ -27,15 +33,12 @@
             v-for="tracker in trackers"
             v-on:click="centerMapOnTracker(tracker)"
           >
-            <td>{{ tracker.mapIndex }}</td>
+            <td>{{ tracker.mapIndex }} km/h</td>
             <td>{{ tracker.speed }}</td>
-            <td>{{ tracker.lat }}</td>
-            <td>{{ tracker.lng }}</td>
             <td>{{ tracker.batPercent }}%</td>
           </tr>
         </tbody>
       </table>
-      <div class="button" v-on:click="viewMap">View Map</div>
     </div>
   </div>
 
