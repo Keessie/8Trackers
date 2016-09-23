@@ -55,6 +55,11 @@ var TRACKERS = {
                 }
             });
 
+            marker.addListener('closeclick', function() {
+                console.log(tracker.selected);
+                tracker.selected = false;
+            });
+
             // Reopen infowindow if it was open before refresh occurred.
             if (tracker.selected === true) {
                 infoWindow.open(map, marker);
