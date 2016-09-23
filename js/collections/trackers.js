@@ -124,8 +124,11 @@ var TRACKERS = {
 function createInfoWindow(number, batPercent, speed, displacement) {
     var displacementText = 'User ∆: ' + displacement || 'n/a';
     var infoWindowText = [
-        'Tracker ', number, '.</p>',
+        'Tracker ', number,
+        '</br>',
+        '</br>',
         'Bat: ', batPercent, '%',
+        '</br>',
         'Speed: ', speed, ' km/h',
         '</br>',
         displacementText
