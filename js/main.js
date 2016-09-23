@@ -30,7 +30,10 @@ function initMap() {
             }
         });
 
-        document.getElementById('page-loading').className = 'loading-completed';
+        // Allow map tiles to load with this setTimout.
+        window.setTimeout(function() {
+            document.getElementById('page-loading').className = 'loading-completed';
+        }, 50);
 
         // We only want to refresh trackers if the initial `getTrackers()` call succeeds.
         window.setInterval(function() {
