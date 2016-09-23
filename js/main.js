@@ -22,6 +22,10 @@ function initMap() {
             methods: {
                 viewMap: function() {
                     this.$el.style.zIndex = -1;
+                },
+                centerMapOnTracker: function(tracker) {
+                    console.log(tracker);
+                    map.setCenter(tracker.googleLatLng);
                 }
             }
         });
