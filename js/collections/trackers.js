@@ -122,16 +122,25 @@ var TRACKERS = {
 };
 
 function createInfoWindow(number, batPercent, speed, displacement) {
-    var displacementText = 'User ∆: ' + displacement || 'n/a';
+    var displacementText = displacement ? displacement + ' m' : 'n/a';
     var infoWindowText = [
-        'Tracker ', number,
+        '<h3>Tracker ', number, '</h3>',
         '</br>',
         '</br>',
-        'Bat: ', batPercent, '%',
-        '</br>',
-        'Speed: ', speed, ' km/h',
-        '</br>',
-        displacementText
+        '<table>',
+            '<tr>',
+                '<td>Battery</td>',
+                '<td>', batPercent , '%</td>',
+            '</tr>',
+            '<tr>',
+                '<td>Speed</td>',
+                '<td>', speed , 'km/h</td>',
+            '</tr>',
+            '<tr>',
+                '<td>User ∆</td>',
+                '<td>', displacementText , '%</td>',
+            '</tr>',
+        '</table>',
     ].join('');
 
     var infoWindow = new google.maps.InfoWindow({ content: infoWindowText });
