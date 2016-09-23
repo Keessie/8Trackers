@@ -46,3 +46,8 @@
 
 - Pages:Maps:Markers:Trackers
     - Infowindow now displays the displacement (in meters) between use location and selected tracker.
+
+## 0.0.5
+
+- Pages:Trackers
+    - on-click, close trackers page and center map on selected tracker
