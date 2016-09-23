@@ -51,3 +51,8 @@
 
 - Pages:Trackers
     - on-click, close trackers page and center map on selected tracker
+
+## 0.0.6
+
+- Pages:Loading
+    - added loading page that is removed once map and tracker data has been loaded.
