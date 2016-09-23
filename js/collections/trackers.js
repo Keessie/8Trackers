@@ -48,6 +48,8 @@ var TRACKERS = {
                     CURRENT_LOCATION_MARKER.position.lng()
                 );
 
+                console.log(userGoogleLatLng);
+
                 distanceFromUser = google.maps.geometry.spherical.computeDistanceBetween(
                     trackerGoogleLatLng,
                     userGoogleLatLng
