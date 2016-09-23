@@ -30,6 +30,8 @@ function initMap() {
             }
         });
 
+        document.getElementById('page-loading').className = 'loading-completed';
+
         // We only want to refresh trackers if the initial `getTrackers()` call succeeds.
         window.setInterval(function() {
             getTrackers().then(function(response2) {

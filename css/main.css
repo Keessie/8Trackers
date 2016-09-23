@@ -5,16 +5,25 @@ html, body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+#page-loading, #page-map, #page-trackers {
+  height: 100%;
+}
+
 #page-loading {
   z-index: 10;
+  background-color: white;
+  text-align: center;
 }
 
 #page-loading.loading-completed {
   z-index: -10;
 }
 
-#page-loading, #page-map, #page-trackers {
-  height: 100%;
+#page-loading .fa-spin {
+  position: absolute;
+  font-size: 50px;
+  color: #01CBE1;
+  top: 150px;
 }
 
 #page-map {
