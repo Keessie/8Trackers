@@ -1,4 +1,4 @@
-/* global Tracker, google */
+/* global Tracker, CURRENT_LOCATION_MARKER, google */
 /* exported TRACKERS */
 
 var TRACKERS = {
@@ -40,9 +40,19 @@ var TRACKERS = {
             var batPercent = data[3];
 
             // Processing
-            var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed);
-            var googleLatLng = createGoogleLatLng(lat, lng);
-            var marker = createMarker(tracker.mapIndex, tracker.colorHex, googleLatLng, map);
+            var trackerGoogleLatLng = new google.maps.LatLng(lat, lng);
+            var userGoogleLatLng = new google.maps.LatLng(
+                CURRENT_LOCATION_MARKER.position.lat(),
+                CURRENT_LOCATION_MARKER.position.lng()
+            );
+
+            var distanceFromUser = google.maps.geometry.spherical.computeDistanceBetween(
+                trackerGoogleLatLng,
+                userGoogleLatLng
+            );
+
+            var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed, distanceFromUser);
+            var marker = createMarker(tracker.mapIndex, tracker.colorHex, trackerGoogleLatLng, map);
 
             // Event handling
             marker.addListener('click', function() {
@@ -56,7 +66,6 @@ var TRACKERS = {
             });
 
             infoWindow.addListener('closeclick', function() {
-                console.log(tracker.selected);
                 tracker.selected = false;
             });
 
@@ -71,7 +80,7 @@ var TRACKERS = {
 
             // Return some tracker data
             var updatedTracker = Object.assign(tracker, {
-                googleLatLng: googleLatLng,
+                googleLatLng: trackerGoogleLatLng,
                 marker: marker,
                 batPercent: batPercent,
                 speed: speed,
@@ -109,21 +118,17 @@ var TRACKERS = {
 
 };
 
-function createInfoWindow(number, batPercent, speed) {
+function createInfoWindow(number, batPercent, speed, distance) {
     var infoWindowText = [
         'Tracker ', number, '.</p>',
         'Bat: ', batPercent, '%',
+        'Speed: ', speed, ' km/h',
         '</br>',
-        'Speed: ', speed, ' km/h'
+        'User ∆: ', distance
     ].join('');
 
     var infoWindow = new google.maps.InfoWindow({ content: infoWindowText });
     return infoWindow;
-}
-
-function createGoogleLatLng(lat, lng) {
-    var googleLatLng = new google.maps.LatLng(lat, lng);
-    return googleLatLng;
 }
 
 function createMarker(mapIndex, colorHex, googleLatLng, map) {
