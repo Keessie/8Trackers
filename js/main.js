@@ -4,6 +4,11 @@
 var TRACKER_UPDATE_INTERVAL = 5000;
 var CURRENT_LOCATION_MARKER = null;
 
+Vue.component('trackerData', {
+    props: ['text'],
+    template: '<td>{{ text }}</td>'
+});
+
 function initMap() {
     var map = renderMap();
     TRACKERS.appendPaths(map);
@@ -12,11 +17,6 @@ function initMap() {
     getTrackers().then(function(response1) {
         renderMarkers(response1.data.feeds, map);
         map.setCenter(TRACKERS.collection[0].googleLatLng);
-
-        Vue.component('trackerData', {
-            props: ['text'],
-            template: '<td>{{ text }}</td>'
-        });
 
         // Update ListView
         var listView = new Vue({
