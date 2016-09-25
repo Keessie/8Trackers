@@ -42,17 +42,26 @@
 - Pages:Maps:Markers:Trackers
     - Fixed bug where closing an infowindow with the "x" would make the infowindow reappear once the tracker data is reloaded.
 
+
 ## 0.0.4
 
 - Pages:Maps:Markers:Trackers
     - Infowindow now displays the displacement (in meters) between use location and selected tracker.
+
 
 ## 0.0.5
 
 - Pages:Trackers
     - on-click, close trackers page and center map on selected tracker
 
+
 ## 0.0.6
 
 - Pages:Loading
     - added loading page that is removed once map and tracker data has been loaded.
+
+
+## 0.0.7
+
+- Pages:Trackers
+    - added button that focuses map on user location
