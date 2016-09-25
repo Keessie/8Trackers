@@ -38,7 +38,7 @@
             v-for="tracker in trackers"
             v-on:click="centerMapOnTracker(tracker)"
           >
-            <td v-bind:style="{ backgroundColor: {{ tracker.colorHex }} }">{{ tracker.mapIndex }}</td>
+            <td v-bind:style="{ backgroundColor: tracker.colorHex }">{{ tracker.mapIndex }}</td>
             <td>{{ tracker.speed }} km/h</td>
             <td>{{ tracker.batPercent }}%</td>
           </tr>
