@@ -6,10 +6,10 @@ var TRACKERS = {
         new Tracker(0, 13, '8E67FD'),
         new Tracker(1, 14, 'FD7567'),
         new Tracker(2, 15, '6991FD'),
-        new Tracker(3, 16, '20E64D'),
+        new Tracker(3, 16, '20D64D'),
         new Tracker(4, 17, '65DBDB'),
         new Tracker(5, 18, 'EE6600'),
-        new Tracker(6, 19, 'C681BC'),
+        new Tracker(6, 19, 'B681DC'),
         new Tracker(7, 20, 'ADA549')
     ],
 
