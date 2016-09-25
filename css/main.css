@@ -97,10 +97,11 @@ html, body {
 
 #page-trackers .button.location {
     background-color: #01CBE1;
+    margin-right: 40px;
 }
 
 #page-trackers .button.view-map {
-    background-color: #F24843;
+    background-color: #F25049;
 }
 
 #page-trackers .fa-close {

@@ -34,6 +34,7 @@ function initMap() {
                         CURRENT_LOCATION_MARKER.position.lng()
                     );
                     map.setCenter(googleLatLng);
+                    this.viewMap();
                 }
             }
         });
