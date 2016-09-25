@@ -38,9 +38,9 @@
             v-for="tracker in trackers"
             v-on:click="centerMapOnTracker(tracker)"
           >
-            <td>{{ tracker.mapIndex }}</td>
-            <td>{{ tracker.speed }} km/h</td>
-            <td>{{ tracker.batPercent }}%</td>
+            <tracker-data text="{{ tracker.mapIndex }}"></tracker-data>
+            <tracker-data text="{{ tracker.speed }} km/h"></tracker-data>
+            <tracker-data text="{{ tracker.batPercent }}%"></tracker-data>
           </tr>
         </tbody>
       </table>
