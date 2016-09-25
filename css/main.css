@@ -42,12 +42,13 @@ html, body {
 }
 
 #page-trackers table {
-  width: 100%;
+  width: 350px;
   background-color: #eee;
   border-radius: 3px;
   padding: 0 0.3em;
   border-collapse: collapse;
   overflow: hidden;
+  clear: both;
 }
 
 #page-trackers thead {
@@ -82,7 +83,6 @@ html, body {
 
 #page-trackers .button {
     display: inline-block;
-    background-color: #01CBE1;
     color: white;
     margin-top: 20px;
     cursor: pointer;
@@ -93,6 +93,14 @@ html, body {
     line-height: 44px;
     border-radius: 22px;
     font-size: 22px;
+}
+
+#page-trackers .button.location {
+    background-color: #01CBE1;
+}
+
+#page-trackers .button.view-map {
+    background-color: #F24843;
 }
 
 #page-trackers .fa-close {

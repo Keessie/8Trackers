@@ -28,7 +28,13 @@ function initMap() {
                     map.setCenter(tracker.googleLatLng);
                     this.viewMap();
                 },
-                hexPercent: hexPercent
+                centerMapOnUser: function() {
+                    var googleLatLng = new google.maps.LatLng(
+                        CURRENT_LOCATION_MARKER.position.lat(),
+                        CURRENT_LOCATION_MARKER.position.lng()
+                    );
+                    map.setCenter(googleLatLng);
+                }
             }
         });
 

@@ -16,8 +16,11 @@
   <div id="page-trackers">
     <div class="content">
       <div class="header">Trackers</div>
-      <div class="button" v-on:click="viewMap">
+      <div class="button view-map" v-on:click="viewMap">
         <i class="fa fa-close"></i>
+      </div>
+      <div class="button location" v-on:click="centerMapOnUser">
+        <i class="fa fa-location-arrow"></i>
       </div>
       <table>
         <thead>
