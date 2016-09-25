@@ -13,7 +13,7 @@ function initMap() {
         renderMarkers(response1.data.feeds, map);
         map.setCenter(TRACKERS.collection[0].googleLatLng);
 
-        Vue.component('tracker-data', {
+        Vue.component('trackerData', {
             props: ['text'],
             template: '<td>{{ text }}</td>'
         });
