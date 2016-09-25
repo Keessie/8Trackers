@@ -10,7 +10,7 @@ var TRACKERS = {
         new Tracker(4, 17, '65DBDB'),
         new Tracker(5, 18, 'FF9900'),
         new Tracker(6, 19, 'E661AC'),
-        new Tracker(7, 20, 'FDF569')
+        new Tracker(7, 20, 'ADA549')
     ],
 
     appendPaths: function(map) {
