@@ -1,13 +1,8 @@
-/* global TRACKERS, renderMapControls, getTrackers, renderMap, google, Vue */
+/* global TRACKERS, renderMapControls, getTrackers, renderMap, hexPercent, google, Vue */
 /* exported initMap */
 
 var TRACKER_UPDATE_INTERVAL = 5000;
 var CURRENT_LOCATION_MARKER = null;
-
-Vue.component('trackerData', {
-    props: ['text'],
-    template: '<td>{{ text }}</td>'
-});
 
 function initMap() {
     var map = renderMap();
@@ -31,7 +26,8 @@ function initMap() {
                 centerMapOnTracker: function(tracker) {
                     map.setCenter(tracker.googleLatLng);
                     this.viewMap();
-                }
+                },
+                hexPercent: hexPercent
             }
         });
 

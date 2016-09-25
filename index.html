@@ -38,9 +38,9 @@
             v-for="tracker in trackers"
             v-on:click="centerMapOnTracker(tracker)"
           >
-            <trackerData text="tracker.mapIndex"></trackerData>
-            <trackerData text="tracker.speed km/h"></trackerData>
-            <trackerData text="tracker.batPercent%"></trackerData>
+            <td v-bind:style="{ background-color: tracker.colorHex }">{{ tracker.mapIndex }}</td>
+            <td>{{ tracker.speed }} km/h</td>
+            <td>{{ tracker.batPercent }}%</td>
           </tr>
         </tbody>
       </table>
@@ -49,6 +49,7 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.14.0/axios.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+  <script src="js/util/hexPercent.js"></script>
   <script src="js/services/getTrackers.js"></script>
   <script src="js/models/Tracker.js"></script>
   <script src="js/collections/trackers.js"></script>
