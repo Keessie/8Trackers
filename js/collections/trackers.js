@@ -8,8 +8,8 @@ var TRACKERS = {
         new Tracker(2, 15, '6991FD'),
         new Tracker(3, 16, '00E64D'),
         new Tracker(4, 17, '65DBDB'),
-        new Tracker(5, 18, 'FF9900'),
-        new Tracker(6, 19, 'E661AC'),
+        new Tracker(5, 18, 'DD6600'),
+        new Tracker(6, 19, 'C661AC'),
         new Tracker(7, 20, 'ADA549')
     ],
 
