@@ -17,7 +17,8 @@ function initMap() {
         var listView = new Vue({
             el: '#page-trackers',
             data: {
-                trackers: TRACKERS.collection
+                trackers: TRACKERS.collection,
+                foo: '#0f0'
             },
             methods: {
                 viewMap: function() {
