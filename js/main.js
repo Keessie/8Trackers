@@ -23,8 +23,8 @@ function initMap() {
                 viewMap: function() {
                     this.$el.style.zIndex = -1;
                 },
-                centerMapOnTracker: function(tracker) {
-                    map.setCenter(tracker.googleLatLng);
+                centerMapOnCoords: function(latLng) {
+                    map.setCenter(latLng);
                     this.viewMap();
                 }
             }
