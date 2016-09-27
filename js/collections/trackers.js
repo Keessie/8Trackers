@@ -42,7 +42,7 @@ var TRACKERS = {
             // Processing
             var trackerGoogleLatLng = new google.maps.LatLng(lat, lng);
             var distanceFromUser = null;
-            var userLatLng = currentLocation.googleLatLng;
+            var userLatLng = currentLocation.latestCoordinates;
             if (userLatLng) {
                 distanceFromUser = Math.round(google.maps.geometry.spherical.computeDistanceBetween(
                     trackerGoogleLatLng,
