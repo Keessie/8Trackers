@@ -3,6 +3,11 @@
 
 var CURRENT_LOCATION_HISTORY_LENGTH = 6;
 
+var CURRENT_LOCATION_PATH_OPTIONS = {
+    strokeColor: '#F29357',
+    strokeWeight: 2
+};
+
 var currentLocation = {
     marker: null,
     coordinateHistory: [],
@@ -13,6 +18,17 @@ var currentLocation = {
     },
     latestCoordinates: function() {
         return this.coordinateHistory[0];
+    },
+
+    setPath: function(map) {
+        if (!this.path) {
+            CURRENT_LOCATION_PATH_OPTIONS.map = map;
+            CURRENT_LOCATION_PATH_OPTIONS.path = [];
+            this.path = new google.maps.Polyline(CURRENT_LOCATION_PATH_OPTIONS);
+        }
+
+        this.path.setPath(this.coordinateHistory);
+        this.path.setMap(map);
     },
 
     setMarker: function(lat, lng, map) {
@@ -38,22 +54,6 @@ var currentLocation = {
         });
 
         this.marker.setPosition(googleLatLng);
-
-        if (!this.path) {
-            var pathOptions = {
-                map: map,
-                path: [],
-                strokeColor: '#FFFFFF',
-                strokeWeight: 2
-            };
-
-            this.path = new google.maps.Polyline(pathOptions);
-        }
-
-        console.log(this.path);
-
-        this.path.setPath(this.coordinateHistory);
-        this.path.setMap(map);
-
+        this.setPath(map);
     }
 };
