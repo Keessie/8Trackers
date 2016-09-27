@@ -65,3 +65,8 @@
 
 - Pages:Trackers
     - added button that focuses map on user location
+
+## 0.0.8
+
+- Pages:Map
+    - added historical path for current location
