@@ -50,6 +50,8 @@ var currentLocation = {
             this.path = new google.maps.Polyline(pathOptions);
         }
 
+        console.log(this.path);
+
         this.path.setPaths(this.coordinateHistory);
         this.path.setMap(map);
 
