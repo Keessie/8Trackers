@@ -52,7 +52,7 @@ var currentLocation = {
 
         console.log(this.path);
 
-        this.path.setPaths(this.coordinateHistory);
+        this.path.setPath(this.coordinateHistory);
         this.path.setMap(map);
 
     }
