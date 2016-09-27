@@ -1,8 +1,7 @@
-/* global TRACKERS, renderMapControls, getTrackers, renderMap, hexPercent, google, Vue */
+/* global TRACKERS, renderMapControls, getTrackers, renderMap, currentLocation, Vue */
 /* exported initMap */
 
 var TRACKER_UPDATE_INTERVAL = 5000;
-var CURRENT_LOCATION_MARKER = null;
 
 function initMap() {
     var map = renderMap();
@@ -13,12 +12,12 @@ function initMap() {
         renderMarkers(response1.data.feeds, map);
         map.setCenter(TRACKERS.collection[0].googleLatLng);
 
-        // Update ListView
+        // Create listView
         var listView = new Vue({
             el: '#page-trackers',
             data: {
                 trackers: TRACKERS.collection,
-                foo: '#0f0'
+                currentLocation: currentLocation
             },
             methods: {
                 viewMap: function() {
@@ -26,14 +25,6 @@ function initMap() {
                 },
                 centerMapOnTracker: function(tracker) {
                     map.setCenter(tracker.googleLatLng);
-                    this.viewMap();
-                },
-                centerMapOnUser: function() {
-                    var googleLatLng = new google.maps.LatLng(
-                        CURRENT_LOCATION_MARKER.position.lat(),
-                        CURRENT_LOCATION_MARKER.position.lng()
-                    );
-                    map.setCenter(googleLatLng);
                     this.viewMap();
                 }
             }
@@ -47,48 +38,35 @@ function initMap() {
         // We only want to refresh trackers if the initial `getTrackers()` call succeeds.
         window.setInterval(function() {
             getTrackers().then(function(response2) {
-                renderMarkers(response2.data.feeds, map);
+                renderMarkers(response2.data.feeds, map, function() {
+                    listView.currentLocation = currentLocation;
+                });
                 listView.trackers = TRACKERS.collection;
             });
         }, TRACKER_UPDATE_INTERVAL);
     });
 }
 
-function renderMarkers(json, map) {
+function renderMarkers(json, map, onSuccessCB) {
     TRACKERS
         .removeMarkers(map)
         .updateFromJSON(json, map);
 
-    renderCurrentLocationMarker(map);
+    renderCurrentLocationMarker(map, onSuccessCB);
 }
 
-function renderCurrentLocationMarker(map) {
+function renderCurrentLocationMarker(map, onSuccessCB) {
     var options = {
         enableHighAccuracy: true,
         timeout: 5000,
         maximumAge: 0
     };
 
-    var markerIcon = new google.maps.MarkerImage(
-        '//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-        new google.maps.Size(22, 22),
-        new google.maps.Point(0, 18),
-        new google.maps.Point(11, 11)
-    );
-
     if (!navigator.geolocation) return;
 
     navigator.geolocation.getCurrentPosition(function(pos) {
-        if (CURRENT_LOCATION_MARKER) CURRENT_LOCATION_MARKER.setMap(null);
-        CURRENT_LOCATION_MARKER = new google.maps.Marker({
-            clickable: false,
-            icon: markerIcon,
-            shadow: null,
-            zIndex: 999,
-            map: map
-        });
-        var googleLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-        CURRENT_LOCATION_MARKER.setPosition(googleLatLng);
+        currentLocation.setMarker(pos.coords.latitude, pos.coords.longitude, map);
+        onSuccessCB();
     }, function(error) {
         console.warn('`navigator.geolocation.getCurrentPosition()` failed: ' + JSON.stringify(error));
     }, options);

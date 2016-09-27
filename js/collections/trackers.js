@@ -1,4 +1,4 @@
-/* global Tracker, CURRENT_LOCATION_MARKER, google */
+/* global Tracker, currentLocation, google */
 /* exported TRACKERS */
 
 var TRACKERS = {
@@ -42,15 +42,11 @@ var TRACKERS = {
             // Processing
             var trackerGoogleLatLng = new google.maps.LatLng(lat, lng);
             var distanceFromUser = null;
-            if (CURRENT_LOCATION_MARKER) {
-                var userGoogleLatLng = new google.maps.LatLng(
-                    CURRENT_LOCATION_MARKER.position.lat(),
-                    CURRENT_LOCATION_MARKER.position.lng()
-                );
-
+            var userLatLng = currentLocation.googleLatLng;
+            if (userLatLng) {
                 distanceFromUser = Math.round(google.maps.geometry.spherical.computeDistanceBetween(
                     trackerGoogleLatLng,
-                    userGoogleLatLng
+                    userLatLng
                 ));
             }
 
