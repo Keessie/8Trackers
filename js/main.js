@@ -66,7 +66,7 @@ function renderCurrentLocationMarker(map, onSuccessCB) {
 
     navigator.geolocation.getCurrentPosition(function(pos) {
         currentLocation.setMarker(pos.coords.latitude, pos.coords.longitude, map);
-        onSuccessCB();
+        if (onSuccessCB) onSuccessCB();
     }, function(error) {
         console.warn('`navigator.geolocation.getCurrentPosition()` failed: ' + JSON.stringify(error));
     }, options);
