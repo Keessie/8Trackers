@@ -53,26 +53,6 @@ var TRACKERS = {
             var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed, distanceFromUser);
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, trackerGoogleLatLng, map);
 
-            // Event handling
-            marker.addListener('click', function() {
-                if (tracker.selected === true) {
-                    tracker.selected = false;
-                    infoWindow.close();
-                } else {
-                    tracker.selected = true;
-                    infoWindow.open(map, marker);
-                }
-            });
-
-            infoWindow.addListener('closeclick', function() {
-                tracker.selected = false;
-            });
-
-            // Reopen infowindow if it was open before refresh occurred.
-            if (tracker.selected === true) {
-                infoWindow.open(map, marker);
-            }
-
             // Update Map Polygon
             tracker.path.getPath().push(new google.maps.LatLng(lat, lng));
             tracker.path.setMap(map);
