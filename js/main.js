@@ -1,4 +1,4 @@
-/* global TRACKERS, renderMapControls, getTrackers, renderMap, currentLocation, Vue */
+/* global TRACKERS, renderMapControls, getTrackers, renderMap, currentLocation, TrackerListVue */
 /* exported initMap */
 
 var TRACKER_UPDATE_INTERVAL = 5000;
@@ -12,23 +12,7 @@ function initMap() {
         renderMarkers(response1.data.feeds, map);
         map.setCenter(TRACKERS.collection[0].googleLatLng);
 
-        // Create listView
-        var listView = new Vue({
-            el: '#page-trackers',
-            data: {
-                trackers: TRACKERS.collection,
-                currentLocation: currentLocation
-            },
-            methods: {
-                viewMap: function() {
-                    this.$el.style.zIndex = -1;
-                },
-                centerMapOnCoords: function(latLng) {
-                    map.setCenter(latLng);
-                    this.viewMap();
-                }
-            }
-        });
+        var trackerListVue = TrackerListVue(map, TRACKERS.collection, currentLocation);
 
         // Allow map tiles to load with this setTimout.
         window.setTimeout(function() {
@@ -39,9 +23,9 @@ function initMap() {
         window.setInterval(function() {
             getTrackers().then(function(response2) {
                 renderMarkers(response2.data.feeds, map, function() {
-                    listView.currentLocation = currentLocation;
+                    trackerListVue.currentLocation = currentLocation;
                 });
-                listView.trackers = TRACKERS.collection;
+                trackerListVue.trackers = TRACKERS.collection;
             });
         }, TRACKER_UPDATE_INTERVAL);
     });
