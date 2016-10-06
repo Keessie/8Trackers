@@ -66,13 +66,21 @@
 - Pages:Trackers
     - added button that focuses map on user location
 
+
 ## 0.0.8
 
 - Pages:Map
     - added historical path for current location
+
 
 ## 0.0.81
 
 -Page:Trackers
     - Added "hover" and "active" effects to table rows
     - Fixed height of tracker list so that it is never larger than screen size
+
+
+## 0.0.82
+
+-Page:Map
+    - Making delta between user and trackers appear in KM if D is > 10km
