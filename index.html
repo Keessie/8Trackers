@@ -22,31 +22,33 @@
       <div class="button location" v-on:click="centerMapOnCoords(currentLocation.latestCoordinates())">
         <i class="fa fa-crosshairs"></i>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <td>
-              <i class="fa fa-hashtag"></i>
-            </td>
-            <td>
-              <i class="fa fa-rocket"></i>
-            </td>
-            <td>
-              <i class="fa fa-battery-3"></i>
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="tracker in trackers"
-            v-on:click="centerMapOnCoords(tracker.googleLatLng)"
-          >
-            <td>{{ tracker.mapIndex }}</td>
-            <td>{{ tracker.speed }} km/h</td>
-            <td>{{ tracker.batPercent }}%</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <td>
+                <i class="fa fa-hashtag"></i>
+              </td>
+              <td>
+                <i class="fa fa-rocket"></i>
+              </td>
+              <td>
+                <i class="fa fa-battery-3"></i>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="tracker in trackers"
+              v-on:click="centerMapOnCoords(tracker.googleLatLng)"
+            >
+              <td>{{ tracker.mapIndex }}</td>
+              <td>{{ tracker.speed }} km/h</td>
+              <td>{{ tracker.batPercent }}%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
