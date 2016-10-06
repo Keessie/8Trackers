@@ -90,3 +90,9 @@
 
 -Page:Map
     - Once new tracker data is loaded, all infowindows are closed.
+
+
+## 0.0.84
+
+-Page:Map
+    - Preventing scrollbar from appearing in infowindow.
