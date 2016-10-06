@@ -1,0 +1,95 @@
+#page-trackers {
+  background-color: rgba(0,0,0,0.7);
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  text-align: center;
+}
+
+#page-trackers table {
+  width: 350px;
+  background-color: #eee;
+  border-radius: 3px;
+  padding: 0 0.3em;
+  border-collapse: collapse;
+  overflow: hidden;
+  clear: both;
+}
+
+#page-trackers thead {
+  background-color: #777;
+  color: white;
+  font-size: 1.4em;
+}
+
+#page-trackers thead td {
+  padding: 0.6em 0.5em;
+}
+
+#page-trackers table tbody tr {
+    cursor: pointer;
+}
+
+#page-trackers table tbody tr:hover {
+  background-color: #ddd;
+}
+
+#page-trackers table tbody tr:active {
+  background-color: #aaa;
+}
+
+#page-trackers tbody tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+
+#page-trackers td {
+  padding: 1.2em 0.5em;
+}
+
+#page-trackers .header {
+  color: #fff;
+  font-size: 26px;
+  margin: 28px 0;
+  text-shadow: 0 0 13px #000;
+  float: left;
+}
+
+#page-trackers .content {
+  display: inline-block;
+  width: 350px;
+  height: 100%;
+}
+
+#page-trackers .table-wrapper {
+  max-height: 70%;
+  width: 100%;
+  overflow: auto;
+}
+
+#page-trackers .button {
+    display: inline-block;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    float: right;
+
+    height: 44px;
+    width: 44px;
+    line-height: 44px;
+    border-radius: 22px;
+    font-size: 22px;
+}
+
+#page-trackers .button.location {
+    background-color: #01CBE1;
+    margin-right: 40px;
+}
+
+#page-trackers .button.view-map {
+    background-color: #F25049;
+}
+
+#page-trackers .fa-close {
+  margin: 1px 0 0 1px;
+}
