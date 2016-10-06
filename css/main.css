@@ -95,7 +95,7 @@ html, body {
   height: 100%;
 }
 
-#page-trackers .tabler-wrapper {
+#page-trackers .table-wrapper {
   max-height: 70%;
   width: 100%;
   overflow: auto;
