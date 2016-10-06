@@ -119,7 +119,9 @@ var TRACKERS = {
 
 
 function createInfoWindow(number, batPercent, speed, displacement) {
-    var displacementText = displacement ? displacement + ' m' : 'n/a';
+    var displayInKM = displacement > 999;
+    var displacementText = displayInKM ? displacement + ' m' : Math.round(displacement / 1000) 'km';
+
     /* eslint-disable indent */
     var infoWindowText = [
         '<div>Tracker ', number, '</div>',
