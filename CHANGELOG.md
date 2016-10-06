@@ -70,3 +70,9 @@
 
 - Pages:Map
     - added historical path for current location
+
+## 0.0.81
+
+-Page:Trackers
+    - Added "hover" and "active" effects to table rows
+    - Fixed height of tracker list so that it is never larger than screen size
