@@ -53,6 +53,15 @@ var TRACKERS = {
             var infoWindow = createInfoWindow(tracker.mapIndex, batPercent, speed, distanceFromUser);
             var marker = createMarker(tracker.mapIndex, tracker.colorHex, trackerGoogleLatLng, map);
 
+            // Event handling
+            marker.addListener('click', function() {
+                infoWindow.open(map, marker);
+            });
+
+            infoWindow.addListener('closeclick', function() {
+                infoWindow.close();
+            });
+
             // Update Map Polygon
             tracker.path.getPath().push(new google.maps.LatLng(lat, lng));
             tracker.path.setMap(map);
