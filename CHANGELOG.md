@@ -84,3 +84,9 @@
 
 -Page:Map
     - Making delta between user and trackers appear in KM if D is > 10km
+
+
+## 0.0.83
+
+-Page:Map
+    - Once new tracker data is loaded, all infowindows are closed.
