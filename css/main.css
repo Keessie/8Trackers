@@ -91,6 +91,14 @@ html, body {
 
 #page-trackers .content {
   display: inline-block;
+  width: 350px;
+  height: 100%;
+}
+
+#page-trackers .tabler-wrapper {
+  max-height: 70%;
+  width: 100%;
+  overflow: auto;
 }
 
 #page-trackers .button {
@@ -147,4 +155,5 @@ html, body {
 
 .gm-style-iw table {
   margin: 0 -1em;
+  width: 100%;
 }
